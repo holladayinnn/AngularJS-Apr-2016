@@ -22,13 +22,13 @@ myMod.controller('MyController', function() {
 	}
  	self.purple = {
 		div1: 'purple',
-		div2: 'purple',
+		div2: 'purple2',
 		background: 'bg-purple',
 		text: 'purple-text'
 	}
  	self.black = {
 		div1: 'black',
-		div2: 'black',
+		div2: 'black2',
 		background: 'bg-black',
 		text: 'black-text'
 	}
