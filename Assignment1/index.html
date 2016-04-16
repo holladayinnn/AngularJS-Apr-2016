@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="index.js"></script>
+
+<style>
+
+
+	html {
+    	height: 100%
+	}
+
+	body {
+    	height: 100%
+	}
+
+	.container {
+    	background-size: cover;
+    	background-position: center top;
+    	background-attachment: fixed;
+	    width: 100%;
+	    height: 100%;
+	    text-align: center;
+	}
+
+	.example {
+		float: left;
+		width: 40%;
+		margin: 20px;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	.default {
+		background-color: #ccc;
+		color: black;
+	}
+
+	.default2{
+		background-color: #eee;
+		color: black;
+	}
+
+	.bg-red{
+		background-image: url("http://4.bp.blogspot.com/_Y9jlk7KvkBA/S7G6UMcYI8I/AAAAAAAAArU/edHrz4rrTmc/s1600/Clifford+The+Big+Dog-3473.jpg");
+	}
+
+	.red {
+		color: white;
+		background-color:rgba(130,0,0,0.8);
+	}
+
+	.red2 {
+		color: white;
+		background-color:rgba(200,0,0,0.8);
+	}
+
+	.red-text {
+		color: maroon;
+	}
+
+	.bg-blue{
+		background-image: url("http://images.metmuseum.org/CRDImages/as/original/DP130155.jpg")
+	}
+
+	.blue{
+		color: white;
+		background-color:rgba(0,0,255,0.8);
+	}
+
+	.blue2{
+		color: white;
+		background-color:rgba(0,0,100,0.8);
+	}
+
+	.blue-text {
+		color: darkcyan;
+	}
+
+	.bg-purple {
+		background-image: url("http://img05.deviantart.net/2758/i/2012/164/f/0/at__lumpy_space_princess_by_pronouncedyou-d53d8qy.jpg")
+	}
+
+	.purple {
+		color: white;
+		background-color:rgba(100,0,100,0.5);
+	}
+
+	.purple-text {
+		color: gold;
+	}
+
+	.bg-black {
+		background-image: url("http://www.xbackgroundcheckx.com/wp-content/uploads/2016/03/Batman-The-Dark-Knight-Wallpaper-Widescreen-uKmzv.jpg")
+	}
+
+	.black {
+		color: white;
+		background-color:rgba(0,0,0,0.5);
+	}
+
+	.black-text {
+		color: white;
+	}
+
+	.bg-crazy {
+		background-image: url("http://media1.giphy.com/media/f31DK1KpGsyMU/giphy.gif")
+	}
+
+	.crazy {
+		color: pink;
+		background-color:rgba(0,100,0,0.7);
+	}
+
+	.crazy2 {
+		color: #fff;
+		background-color:rgba(200,10,100,0.7);
+	}
+
+	.crazy-text {
+		color: black;
+	}
+
+</style>
+
+<title>UI THEME PICKER</title>
+</head>
+<body ng-app="MyModule">
+	<div class="container" ng-class="ctrl.themeSelected.background" ng-controller="MyController as ctrl">
+		<h1 ng-class="ctrl.themeSelected.text"><i class="fa fa-envira" aria-hidden="true"></i>UI THEME PICKER</h1>
+		<div ng-init="ctrl.themeSelected=ctrl.default">
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.default" > Default
+			</label>
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.blue" > Blue
+			</label>
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.red" > Red
+			</label>
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.purple" > Purple
+			</label>
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.black" > Black
+			</label>
+			<label class="radio-inline" ng-class="ctrl.themeSelected.text">
+				<input type="radio" name="theme" ng-model="ctrl.themeSelected" ng-value="ctrl.crazy" > cRaZY
+			</label>
+		</div>
+		<div class="example" ng-class="ctrl.themeSelected.div1">
+		To be, or not to be, that is the question:
+		Whether 'tis Nobler in the mind to suffer
+		The Slings and Arrows of outrageous Fortune,
+		Or to take Arms against a Sea of troubles,
+		And by opposing end them: to die, to sleep
+		No more; and by a sleep, to say we end
+		The Heart-ache, and the thousand Natural shocks
+		That Flesh is heir to? 'Tis a consummation
+		Devoutly to be wished. To die, to sleep,
+		To sleep, perchance to Dream; aye, there's the rub,
+		For in that sleep of death, what dreams may come,
+		When we have shuffled off this mortal coil,
+		Must give us pause. There's the respect
+		That makes Calamity of so long life:
+		For who would bear the Whips and Scorns of time,
+		The Oppressor's wrong, the proud man's Contumely,
+		The pangs of despised Love, the Law's delay,
+		</div>
+		<div class="example" ng-class="ctrl.themeSelected.div2">
+		The insolence of Office, and the Spurns
+		That patient merit of the unworthy takes,
+		When he himself might his Quietus make
+		With a bare Bodkin? Who would Fardels bear,
+		To grunt and sweat under a weary life,
+		But that the dread of something after death,
+		The undiscovered Country, from whose bourn
+		No Traveller returns, Puzzles the will,
+		And makes us rather bear those ills we have,
+		Than fly to others that we know not of.
+		Thus Conscience does make Cowards of us all,
+		And thus the Native hue of Resolution
+		Is sicklied o'er, with the pale cast of Thought,
+		And enterprises of great pitch and moment, 
+		With this regard their Currents turn awry,
+		And lose the name of Action. Soft you now,
+		The fair Ophelia? Nymph, in thy Orisons
+		Be all my sins remembered.
+		</div>
+	</div>
+</body>
+</html>
