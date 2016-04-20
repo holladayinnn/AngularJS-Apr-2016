@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+
+  <body ng-app="MyApp">
+  	<div ng-controller="MainController as ctrl">
+		<div ng-hide="ctrl.isEditing">
+			<div>
+				<label>First: </label><span ng-bind="ctrl.user.fname"></span>
+			</div>
+			<div>
+				<label>Last: </label><span ng-bind="ctrl.user.lname"></span>
+			</div>
+			<div>
+				<label>Email: </label><span ng-bind="::ctrl.user.email"></span>
+			</div>
+			<button ng-click="ctrl.onEditClicked()">Edit</button>
+		</div>
+		<div ng-show="ctrl.isEditing">
+			<div>
+				<label>First: </label><input type="text" ng-model="ctrl.copyUser.fname">
+			</div>
+			<div>
+				<label>Last: </label><input type="text" ng-model="ctrl.copyUser.lname">
+			</div>
+			<div>
+				<label>Email: </label><span ng-bind="::ctrl.copyUser.email"></span>
+			</div>
+			<button ng-click="ctrl.onSaveClicked()">Save</button>
+			<button ng-click="ctrl.onCancelClicked()">Cancel</button>
+		</div>
+  	</div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+.box {
+  width: 50%;
+  height: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.yellow {
+  background-color: #FCF259;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: #B81815;
+}
+.blue {
+  background-color: #3371B9;
+}
+
+.red .child1 {
+  background-color: #3C1100;
+  color: #5E5249;
+}
+
+.red .child2 {
+  background-color: #AD0001;
+  color: #C4A6AC;
+}
+
+.blue .child1 {
+  background-color: #1C3C60;
+  color: #8EB5DC;
+}
+
+.blue .child2 {
+  background-color: #4CB5DE;
+  color: #1C3C60;
+}
+
+.green .child1 {
+  background-color: #3E5D00;
+  color: #FFFFF5;
+}
+
+.green .child2 {
+  background-color: #A8C900;
+  color: #1F0300;
+}
+
+.yellow .child1 {
+  background-color: #9DCFB0;
+  color: #50682A;
+}
+
+.yellow .child2 {
+  background-color: #7EA60D;
+  color: #C2C4C3;
+}

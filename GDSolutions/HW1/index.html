@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</head>
+<body ng-app="MyApp">
+  <h2>Assignment 1</h2>
+  <div ng-controller="ThemeController as ctrl"
+       ng-class="ctrl.selectedTheme.cssClass">
+    <h3>Theme Picker</h3>
+    <div ng-repeat="theme in ctrl.themes">
+      <label>
+        <input 
+        type="radio"
+        name="theme"
+        ng-value="theme"
+        ng-model="ctrl.selectedTheme"><span ng-bind="theme.name"></span>
+      </label>
+    </div>
+    <div class="content">
+      <div class="box child1">
+        Child1 Content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div><!-- 
+    --><div class="box child2">
+        Child2 Content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
