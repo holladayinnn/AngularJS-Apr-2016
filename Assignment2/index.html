@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	
+	<script src="index.js"></script>
+
+	<title>Assignment 2 Angular JS </title>
+
+	<style>
+		.part1 {
+			min-height: 400px;
+		}
+		.redText {
+			color: red;
+		}
+		.greenText {
+			color: green;
+		}
+		.blueText {
+			color: blue;
+		}
+		.item-title {
+			font-weight:bold;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body ng-app="MyModule">
+	<div class="container-fluid" ng-controller="MyController as ctrl">
+		<!--**********PART1**********-->
+		<div class="part1">
+			<div class="col-md-12" >
+				<h3>Folders </h3>
+			</div>
+			<div class="col-md-6">
+				<input type="checkbox" ng-model="ctrl.isBoxChecked"> Expand
+				<br /><br />
+				<div>
+					<div>Folder 1</div>
+					<div ng-show="ctrl.isBoxChecked">
+						<ul>
+							<li ng-repeat="file in ctrl.folder1"><span ng-bind="file"></span></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div>Folder 2</div>
+					<div ng-show="ctrl.isBoxChecked">
+						<ul>
+							<li ng-repeat="file in ctrl.folder2"><span ng-bind="file"></span></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div>Folder 3</div>
+					<div ng-show="ctrl.isBoxChecked">
+						<ul>
+							<li ng-repeat="file in ctrl.folder3"><span ng-bind="file"></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 form-group">
+				File Name: <input type="text" ng-model="ctrl.fileName">
+				<input class="btn btn-success" type="button" ng-click=
+			"ctrl.onClick()" value="Add File">
+				<div>
+					<input type="radio" name="folder" ng-model="ctrl.folderSelected" ng-value="ctrl.folder1"> Folder 1
+					<input type="radio" name="folder" ng-model="ctrl.folderSelected" ng-value="ctrl.folder2"> Folder 2
+					<input type="radio" name="folder" ng-model="ctrl.folderSelected" ng-value="ctrl.folder3"> Folder 3
+				</div>
+			</div>
+
+		</div>
+
+		<!--**********PART2**********-->
+		<div class="part2 col-md-12">
+			<div class="form-group">
+				<h3>Form</h3>
+				<div>
+					Name:<input type="text" ng-model="ctrl.toDoName">
+				</div>
+				<div>
+					Description:<input type="text" ng-model="ctrl.toDoDescription">
+				</div>
+				<div>
+					<div>
+					Priority:
+					</div>
+					<div>
+						<div>
+							<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.high"> High
+						</div>
+						<div>
+							<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.medium"> Medium
+						</div>
+						<div>
+							<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.low"> Low
+						</div>
+					</div>
+				</div>
+				<div>
+					<input type="button" class="btn btn-success" value="Add Todo" ng-click="ctrl.addToDo()">
+				</div>
+			</div>
+			<div>
+				<h3>To Do List</h3>
+				<div ng-repeat="item in ctrl.toDo">
+					<div class="item-title" ng-class="item.priority">Todo: {{ $index + 1 }}</div>
+
+					<div ng-class="item.priority">Name: <span ng-bind="item.name"></span></div>
+					<div ng-class="item.priority">Description: <span ng-bind="item.description"></span></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
