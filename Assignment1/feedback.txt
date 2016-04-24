@@ -1,0 +1,6 @@
+Good Job Tommy.  You win the most creative approach to this assignment award.  Using objects was the same way I did it my first time doing the assignment.  I changed it to use only one ng-class and take advantage of child selectors in css.  Take a look and let me know if you have any questions.
+
+
+Nicely done. Cheers
+
+10/10
