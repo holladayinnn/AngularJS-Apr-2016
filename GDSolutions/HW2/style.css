@@ -1,0 +1,22 @@
+.high {
+  color: red;
+}
+
+.medium {
+  color: green;
+}
+
+.low {
+  color: blue;
+}
+
+.box {
+  width: 50%;
+  min-height: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.isCollapsed .fileName {
+	display: none
+}
