@@ -1,0 +1,67 @@
+Good job Tommy it's all there. 10/10.  Below are my comments/optimizations you could make.  Let me know if you have any questions.
+
+1)  ng-repeat for folders.  For this example we only had three folders but we could have a lot of folders.  It would be easier to just put all them into an array and use ng-repeat.
+
+2) excellent job on using "self.folderSelected.push(self.fileName);".  That was exactly what I was looking for here.  (again you could have used ng-repeat to display the radio buttons)
+
+3)
+	//what you have...
+	<div ng-repeat="item in ctrl.toDo">
+		<div class="item-title" ng-class="item.priority">Todo: {{ $index + 1 }}</div>
+
+		<div ng-class="item.priority">Name: <span ng-bind="item.name"></span></div>
+		<div ng-class="item.priority">Description: <span ng-bind="item.description"></span></div>
+	</div>
+
+
+	//optimization: use a single ng-class over the container element.  This means less code and less watchers so it'll be faster overall.
+	<div ng-repeat="item in ctrl.toDo" ng-class="item.priority">
+		<div class="item-title">Todo: {{ $index + 1 }}</div>
+		<div >Name: <span ng-bind="item.name"></span></div>
+		<div>Description: <span ng-bind="item.description"></span></div>
+	</div>
+
+4) this last one you'll discover it'll make your life easier in the long run, but you don't have to do it.  For ng-models its easier to bind different models to different properties on the same object.  Then just push the object into the array when you're ready.
+
+	//what you have:
+		Name:<input type="text" ng-model="ctrl.toDoName">
+		Description:<input type="text" ng-model="ctrl.toDoDescription">
+		Priority:
+				<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.high"> High
+				<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.medium"> Medium
+				<input type="radio" name="priority" ng-model="ctrl.toDoP" ng-value="ctrl.low"> Low
+
+		//in the controller:
+		self.addToDo = function() {
+			if(self.toDoName && self.toDoDescription && self.toDoP) {
+				self.toDo.push(
+				{
+					name: self.toDoName,
+					description: self.toDoDescription,
+					priority: self.toDoP
+				});
+				self.toDoName = "";
+				self.toDoDescription = "";
+				self.toDoP = "";
+			}
+		};
+
+
+	//optimization
+	Name:<input type="text" ng-model="ctrl.formTodo.toDoName">
+	Description:<input type="text" ng-model="ctrl.formTodo.toDoDescription">
+	Priority:
+			<input type="radio" name="priority" ng-model="ctrl.formTodo.toDoP" ng-value="ctrl.high"> High
+			<input type="radio" name="priority" ng-model="ctrl.formTodo.toDoP" ng-value="ctrl.medium"> Medium
+			<input type="radio" name="priority" ng-model="ctrl.formTodo.toDoP" ng-value="ctrl.low"> Low
+
+		//then in your controller you can just say
+		self.addToDo = function() {
+			if(self.formTodo.toDoName && self.formTodo.toDoDescription && self.formTodo.toDoP) {
+				self.toDo.push(self.formTodo);
+				self.formTodo = {}
+			}
+		};
+
+
+5)  Good Job! 10/10
