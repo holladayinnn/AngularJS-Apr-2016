@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" i>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script> <!--Angular CDN -->
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="service.js"></script>
+    <title>Music Playlist Generator</title>
+
+    <style>
+      header {
+        background-image: url("http://coolblackppt.com/wp-content/uploads/2013/09/Green-square-textures-background-1280x1024-wallls-com.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        width: 100%;
+        margin-top:0;
+        padding-left: 80px;
+        position: absolute;
+      }
+
+      .container {
+        padding-top:80px;
+      }
+
+      .personal-info {
+        height: 220px;
+      }
+
+      .genres {
+        padding-left: 30px;
+        height: 220px;
+      }
+
+      .playlist {
+        
+      }
+
+    </style>
+  
+  </head>
+  <body ng-app="MyModule"> 
+  <header>
+        <h1>Music Playlist Generator <span><i class="fa fa-music" aria-hidden="true"></i></span></h1>
+    </header>
+    <div ng-controller="MyController as ctrl" class="container">
+      <div class="col-md-6 personal-info">
+      <h2>Your Info</h2>
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Name" ng-model="ctrl.p.name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Age" ng-model="ctrl.p.age" ng-change="ctrl.p.checkAge()">
+            </div>
+          </div>
+    
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-disabled="ctrl.p.explicitDisabled" ng-model="ctrl.p.explicit"> Explicit
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-6 genres">
+        <div class="form-group row">
+          <h2>Select Genre</h2>
+          <div class="c-inputs-stacked">
+            <label class="c-input c-radio">
+              <input id="radioStacked1" name="genre" type="radio" ng-model="ctrl.genreSelected" ng-value="ctrl.p.songs.jazzList">
+              <span class="c-indicator"></span>
+              Jazz
+            </label>
+            <br />
+            <label class="c-input c-radio">
+              <input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.genreSelected" ng-value="ctrl.p.songs.hiphopList">
+              <span class="c-indicator"></span>
+              Hip hop
+            </label>
+            <br />
+            <label class="c-input c-radio">
+              <input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.genreSelected" ng-value="ctrl.p.songs.rockList">
+              <span class="c-indicator"></span>
+              Rock
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Song Options</h2>
+        <div class="checkbox" ng-repeat="song in ctrl.genreSelected">
+          <label>
+            <input type="checkbox" value="song.selected" ng-model="song.selected">
+              <span ng-bind="song.name"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <input ng-click="ctrl.p.onSubmit()" type="button" value="Save your playlist" class="btn btn-lg btn-danger">
+      </div>
+
+      <div class="col-md-12 playlist" ng-show="ctrl.p.showPlayList">
+       <h2><span ng-bind="ctrl.p.name"></span>'s Playlist:</h2>
+        <div class="col-md-6">
+          <div ng-repeat="song in ctrl.p.playList">
+            <a ng-href="{{song.link}}" target="_blank"><i class="fa fa-play" aria-hidden="true"></i></a><span ng-bind="song.name"></span>
+          </div>
+        </div>
+        
+        <div class="cold-md-6">
+        <img width="300px" height="300px" src="http://images6.fanpop.com/image/photos/37500000/Headphones-adventure-time-with-finn-and-jake-37537533-700-650.png" alt="headphones">
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

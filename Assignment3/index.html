@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script> <!--Angular CDN -->
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="services.js"></script>
+    <title>Student Report Card</title>
+
+    <style>
+    input[type=text], input[type=number] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .btn {
+      padding: 12px 20px;
+    }
+
+    #title {
+      text-decoration: underline;
+    }
+
+    #student {
+        width: 50%;
+    }
+
+    #assignment input[type=text], input[type=number] {
+        width: 42%;
+    }
+
+
+
+    </style>
+  </head>
+  <body ng-app="MyModule"> 
+    <div ng-controller="MyController as ctrl" class="container">
+    
+      <div class ="col-md-12">
+          <h4 id="title">Student Report Card</h4>
+          <div>
+            <input id="student" type="text" placeholder="Student Name" ng-model="ctrl.student">
+          </div>
+      </div>
+    <div>
+      <div class="col-md-12">
+        <div>
+          <br />
+        <h1 ng-bind="ctrl.student"></h1>
+        <br />
+        </div>
+        <div>
+          <h4>Add Assignment</h4>
+          <div id="assignment">
+            <input type= "text" placeholder="Assignment Name" ng-model="ctrl.assignmentName">
+            <input type= "number" placeholder="Score" ng-model="ctrl.assignmentGrade">
+            <input class="btn" type= "button" value="Add" ng-click="ctrl.addAssignment(ctrl.assignmentName, ctrl.assignmentGrade)">
+          </div>
+        </div>
+      
+      </div>
+
+    <div class="col-md-6">
+      <br /><br />
+        <h4>Assignments</h4>
+        <div>
+          <table class="table table-hover">
+            <thead>
+              <td>Assignment Name</td>
+              <td>Score</td>
+              <td>Delete</i></td>
+          </thead>
+            <tbody>
+              <tr ng-repeat="assignment in ctrl.a.assignmentList">
+                <td ng-bind="assignment.name"> </td> 
+                <td ng-bind="assignment.grade"> </td>
+                <td ng-click="ctrl.a.removeAssignment($index)"><i class="fa fa-times" aria-hidden="true"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div>
+          <br /><br />
+            <h4>Stats</h4>
+            <div>
+              <table class="table">
+                <thead>
+                  <td>Average</td>
+                  <td ng-bind="ctrl.a.average"></td>
+                </thead>
+                <tr>
+                  <td>Grade</td>
+                  <td ng-bind="ctrl.a.grade"></td>
+                </tr>
+                <tr>
+                  <td>Passing?</td>
+                  <td ng-bind="ctrl.a.passing"></td>
+                </tr>
+              </table>         
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    </div>
+
+  </body>
+</html>
