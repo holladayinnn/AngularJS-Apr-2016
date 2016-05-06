@@ -26,7 +26,8 @@ angular.module('sampleNode')
     		id: '@id'
     	}, {
 		toDoDetails: {
-			method: 'GET'
+			method: 'GET',
+			isArray: true
 		}
 	});
 	return resourceObject;
