@@ -7,8 +7,8 @@ angular.module('sampleNode')
 
 
   function getAllTodos() {
-    TodoListResource.getToDos()
-    .$promise.then(function onSuccess(response) {
+    TodoListResource.getToDos().$promise.then(function onSuccess(response) {
+            self.todos = response;
            console.log('SUCCESS: ', response);
         }, function onError(errorMessage) {
            console.log('ERROR: ', errorMessage);
@@ -16,16 +16,18 @@ angular.module('sampleNode')
       }
 
   self.addTodo = function(todo) {
-    TodoAddResource.addToDo().$promise.then(function onSuccess(response) {
+    TodoAddResource.addToDo(todo).$promise.then(function onSuccess(response) {
          console.log('SUCCESS: ', response);
       }, function onError(errorMessage) {
          console.log('ERROR: ', errorMessage);
       });
+      self.userTodo = {};
+      console.log(todo);
+      getAllTodos();
     };
 
   self.editTodo = function(todo) {
-    TodoDetailsResource.toDoDetails({ 
-    }).$promise.then(function onSuccess(response) {
+    TodoDetailsResource.toDoDetails(todo).$promise.then(function onSuccess(response) {
          console.log('SUCCESS: ', response);
       }, function onError(errorMessage) {
          console.log('ERROR: ', errorMessage);

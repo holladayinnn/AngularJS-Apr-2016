@@ -4,9 +4,8 @@ angular.module('sampleNode')
 
 .factory('TodoAddResource',  function($resource) {
 	var resourceObject = $resource('/api/addtodo', null, {
-		addToDos: {
-			method: 'PUT',
-			isArray: true
+		addToDo: {
+			method: 'PUT'
 		}
 	});
 	return resourceObject;
