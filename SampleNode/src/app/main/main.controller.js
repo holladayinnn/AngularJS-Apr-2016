@@ -9,7 +9,7 @@ angular.module('sampleNode')
   function getAllTodos() {
     TodoListResource.getToDos().$promise.then(function onSuccess(response) {
             self.todos = response;
-           console.log('SUCCESS: ', response);
+           //console.log('SUCCESS: ', response);
         }, function onError(errorMessage) {
            console.log('ERROR: ', errorMessage);
         });
@@ -17,34 +17,37 @@ angular.module('sampleNode')
 
   self.addTodo = function(todo) {
     TodoAddResource.addToDo(todo).$promise.then(function onSuccess(response) {
-         console.log('SUCCESS: ', response);
+         //console.log('SUCCESS: ', response);
       }, function onError(errorMessage) {
          console.log('ERROR: ', errorMessage);
       });
       self.userTodo = {};
-      console.log(todo);
       getAllTodos();
     };
 
   self.editTodo = function(todo) {
-    TodoDetailsResource.toDoDetails(todo).$promise.then(function onSuccess(response) {
-         console.log('SUCCESS: ', response);
+    TodoDetailsResource.toDoDetails({id: todo._id}).$promise.then(function onSuccess(response) {
+         self.isEditing = true;
+         self.userTodo = response;
+         //console.log('SUCCESS: ', response);
       }, function onError(errorMessage) {
          console.log('ERROR: ', errorMessage);
       });
     };
 
   self.updateTodo = function(todo) {
-    TodoUpdateResource.toDoUpdate({ 
-    }).$promise.then(function onSuccess(response) {
-         console.log('SUCCESS: ', response);
+    TodoUpdateResource.updateToDo(todo).$promise.then(function onSuccess(response) {
+         self.isEditing = false;
+         self.userTodo = {};
+         //console.log('SUCCESS: ', response);
       }, function onError(errorMessage) {
          console.log('ERROR: ', errorMessage);
       });
   };
 
   self.cancelUpdate = function() {
-
+    self.isEditing = false;
+    self.userTodo = {};
   };
 
   getAllTodos();
