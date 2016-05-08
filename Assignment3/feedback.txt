@@ -1,0 +1,3 @@
+Nicely done Tommy (20/20).
+
+Only change I would make is to move the logic that determines the grade/pass into a service.  Other than that it looking good.

@@ -1,0 +1,9 @@
+.column {
+	width: 50%;
+	float: left;
+}
+
+.inline {
+	display: inline-block;
+	vertical-align: top;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="services.js"></script>
+</head>
+<body ng-app="MyApp">
+  <div ng-controller="SudentController as ctrl">
+   <div class="column">
+     <h3>Student Information</h3>
+     <div>
+       <label>Name: </label><input type="text" ng-model="ctrl.reportCard.name">
+     </div>
+
+     <h3>Assignments</h3>
+     <ul>
+       <li ng-repeat='assignment in ctrl.reportCard.assignments'>
+        <div>
+         <label>Name: </label><span ng-bind="assignment.name"></span> 
+        </div>
+         <div>
+          <label>Grade: </label><span ng-bind="assignment.grade"></span> 
+         </div>
+         <div> 
+         <button ng-click="ctrl.reportCard.removeAssignment(assignment)">Remove</button>
+         </div>
+       </li>
+     </ul>
+   </div>
+   <div class="column">
+     <h3>Add Assignemnt</h3>
+     <div>
+       <label>Name: </label><input type="text" ng-model="ctrl.inputAssignment.name">
+     </div>
+     <div>
+       <label>Grade: </label><input type="number" ng-model="ctrl.inputAssignment.grade">
+     </div>
+     <br/><button ng-click="ctrl.onAddAssignment(ctrl.inputAssignment)">Add</button>
+     <h3>Summary</h3>
+     <div>
+       <label>Average: </label><span ng-bind="ctrl.reportCard.average"></span>
+     </div>
+     <div>
+       <label>Grade: </label><span ng-bind="ctrl.reportCard.grade"></span>
+     </div>
+     <div>
+       <label>Passing: </label><span ng-bind="ctrl.reportCard.passing"></span>
+     </div>
+   </div>
+  </div>
+</body>
+</html>

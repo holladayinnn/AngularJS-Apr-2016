@@ -1,0 +1,22 @@
+Again, great job Tommy 20/20.
+
+I really don't have any constructive critisism so I'll make some very minor points.
+
+1)
+
+	"checkAge" could be named better.  What is it checking? age exists? over some age? under some age? etc
+
+
+2)
+	PlayList class is tightly coupled with the given set of genres.  It should work with any genres. So
+		a) Don't inject the genres directly into it.
+		b) Can't have this because the genres themselves might change..
+			Playlist.addToPlaylist(this.songs.jazzList, this.playList);
+			Playlist.addToPlaylist(this.songs.hiphopList, this.playList);
+			Playlist.addToPlaylist(this.songs.rockList, this.playList
+
+			what if tomorrow we add/remove a genre?
+
+Just some things to think about.
+
+Great Job
