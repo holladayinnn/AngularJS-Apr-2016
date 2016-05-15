@@ -1,0 +1,24 @@
+Looks good Tommy. Small points below:
+
+1)
+
+	In the addTodo function:
+
+	self.addTodo = function(todo) {
+	  TodoAddResource.addToDo(todo).$promise.then(function onSuccess(response) {
+	       //console.log('SUCCESS: ', response);
+	    }, function onError(errorMessage) {
+	       console.log('ERROR: ', errorMessage);
+	    });
+	    self.userTodo = {};
+	    getAllTodos();
+	  };
+
+	It's a little expensive to request the entire list of todos when you just want to add a single one to the list.  Is there a better way of doing this?
+
+
+2)
+
+	In the updateTodo function...when I succesfully update a todo, I should see the changes reflected in the list of todos, eg if I update the todo name I should see the name update.
+	
+
