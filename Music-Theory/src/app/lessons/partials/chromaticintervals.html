@@ -1,0 +1,277 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12">
+	  	<h4>Chromatic Intervals</h4>
+	  </div>
+</div>
+	
+<div class="row"> 
+	<div class="col-lg-8 col-md-8">
+		<p>
+			Diatonic intervals are often not descriptive enough when it comes to understanding the exact nature of the interval.
+		</p>
+		<p>
+			<strong>Chromatic intervals</strong> are measured in whole steps and half steps as well as note letters away.  The number of note letters away give the interval the number name, and depending on the exact number of steps as well as the quality the interval will be prefixed with either <strong>major, minor, diminished, augmented, or perfect</strong>.</p>
+		<p>
+			Chromatic intervals with the same notes can have different names depending on the note names you give them.  For example, even though F# and Gb are the same note, C to F# would be an augmented fourth because F is four note letters away from C, but C to Gb would be a diminished fifth because G is five note letters away from C.
+		</p>
+		
+		<p>
+			 In practice people generally will remember the interval by the sound of it, rather then the number of steps.
+		</p>
+
+		<p><strong>Chromatic intervals in the C major scale: </strong></p>
+		<p>(WS = Whole step, HS = half step)</p>
+		<table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>First Note</th>
+		        <th>Second Note</th>
+		        <th>Chromatic Interval</th>
+		        <th># of Steps Apart</th>
+		        <th>Hear Interval</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>C</td>
+		        <td>C</td>
+		        <td>Perfect Unison</td>
+		        <td>0 HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,12)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>D</td>
+		        <td>Major Second</td>
+		        <td>1 WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,14)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>E</td>
+		        <td>Major Third</td>
+		        <td>2 WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,16)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>F</td>
+		        <td>Perfect Fourth</td>
+		        <td>2WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,17)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>G</td>
+		        <td>Perfect Fifth</td>
+		        <td>3WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,19)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>A</td>
+		        <td>Major Sixth</td>
+		        <td>4WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,21)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>B</td>
+		        <td>Major Seventh</td>
+		        <td>5WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,23)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>higher C</td>
+		        <td>Perfect Octave</td>
+		        <td>6WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,24)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+		<p>
+			<strong>So how do you know what prefix you should give the interval?</strong>
+		</p>
+		<p>
+			The prefix of major, minor, augmented, diminished, or perfect is given to the interval to describe the interval's <strong>quality</strong>, i.e. does the interval sound major, minor, augmented, diminished, or perfect.  Major and augmented intervals are larger than minor and diminished intervals.  A flatted major interval will be minor, and a flatted perfect or minor interval will be diminished.  A sharpened minor interval will be major, and a sharpened major or perfect interval will be augmented.
+		</p>
+		<p><strong>Chromatic intervals in the C chromatic scale: </strong></p>
+		<table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>First Note</th>
+		        <th>Second Note</th>
+		        <th>Chromatic interval</th>
+		        <th>Alternate Second Note</th>
+		        <th>Alternate Chromatic Interval</th>
+		        <th># of steps apart</th>
+		        <th>Hear Interval</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>C</td>
+		        <td>C</td>
+		        <td>Perfect Unison</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>0 HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,12)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>C#</td>
+		        <td>Augmented Unison</td>
+		        <td>Db</td>
+		        <td>Minor 2nd</td>
+		        <td>1 HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,13)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>D</td>
+		        <td>Major 2nd</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>1 WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,14)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>D#</td>
+		        <td>Augmented 2nd</td>
+		        <td>Eb</td>
+		        <td>Minor 3rd</td>
+		        <td>1WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,15)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>E</td>
+		        <td>Major 3rd</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>2WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,16)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>F</td>
+		        <td>Perfect 4th</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>2WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,17)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>F#</td>
+		        <td>Augmented 4th (aka tritone)</td>
+		        <td>Gb</td>
+		        <td>Diminished 5th (aka tritone)</td>
+		        <td>3WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,18)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>G</td>
+		        <td>Perfect 5th</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>3WS+HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,19)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>G#</td>
+		        <td>Augmented 5th</td>
+		        <td>Ab</td>
+		        <td>Minor 6th</td>
+		        <td>4WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,20)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>A</td>
+		        <td>Major 6th</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>4WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,21)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>A#</td>
+		        <td>Augmented 6th</td>
+		        <td>Bb</td>
+		        <td>Minor 7th</td>
+		        <td>5WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,22)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>B</td>
+		        <td>Major 7th</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>5WS+1HS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,23)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>Higher C</td>
+		        <td>Perfect Octave</td>
+		        <td>N/A</td>
+		        <td>N/A</td>
+		        <td>6WS</td>
+		        <td><input ng-click="ctrl.k.playInterval(12,24)" type="button" value="Play Interval" class="btn"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+		  <p>
+		  	A <strong>tritone</strong> is an interval that splits the octave exactly in half.  Since there are 12 half steps or 6 whole steps in an octave, the tritone would be the interval that is 6 half steps or 3 whole steps from the original note.
+		  </p>
+		  <p>
+		  	I recommend playing some of these intervals on the piano, and hearing how they sound.  You can play intervals ascending, descending or simultaneously.
+		  </p>
+	  </div>
+</div>
+
+<div class="piano">
+	<ol class="scale-1">
+		<li ng-mousedown="ctrl.k.playNote(0)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(1)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(2)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(3)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(4)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<li ng-mousedown="ctrl.k.playNote(5)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(6)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(7)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(8)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(9)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(10)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(11)" ng-mouseup="ctrl.k.stopNote()">B</li>
+	</ol>
+	<ol class="scale-2">
+		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<!-- <li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li>  -->
+	</ol> 
+</div>
+<div class="row volume">
+	<br />
+	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
+	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
+</div>
+<br />

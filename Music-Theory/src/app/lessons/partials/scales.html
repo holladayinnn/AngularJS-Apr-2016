@@ -1,0 +1,60 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12">
+	  	<h4>Scales</h4>
+	  </div>
+</div>
+	
+<div class="row"> 
+	<div class="col-lg-8 col-md-8">
+		<p>
+			A <strong>scale</strong> is a set of notes, usually spanning one octave.  Scales are also typically the same set of notes ascending and descending, but they could be written differently depending on which direction you are going.  
+		</p>
+		<p>
+			Many melodies and chord progressions are built off of a single scale.
+		</p>
+		<p>
+			Depending on the number of notes in the scale, the scale can be described differently.  For instance, an eight note scale would be called an octatonic scale, a seven note scale would be called a heptatonic scale, and a five note scale would be called a pentatonic scale.  
+		</p>
+		<p>
+			You can build scales using a combination of whole steps, half steps, and intervals.
+		</p>
+		<p>
+			One example of a scale is called the <strong>chromatic scale</strong>, and it is the only dodecatonic (12-note) scale.  The chromatic scale is built entirely of half steps.  If you play half steps from C to the C an octave higher you will get a C chromatic scale.  The set of notes in a C chromatic scale ascending is: [C, C#, D, D#, E, F, F#, G, G#, A, A#, B].  Descending the scale would be [C, B, Bb, A, Ab, G, Gb, F, E, Eb, D, Db], which is the same set of notes written differently. In the example below, I add the C up an octave to give the scale a complete sound.
+		</p>
+		<p>
+			<input ng-click="ctrl.k.playScale([12,13,14,15,16,17,18,19,20,21,22,23,24])" type="button" value="Play Chromatic Ascending" class="btn btn-lg">
+			<input ng-click="ctrl.k.playScaleDescending([12,13,14,15,16,17,18,19,20,21,22,23,24])" type="button" value="Play Chromatic Descending" class="btn btn-lg">
+		</p>
+		<p>
+			Another example is the <strong>whole tone scale</strong>, which belongs to the hexatonic (six-note) scale family.  A whole-tone scale is built entirely of whole steps.  If you play only whole steps from C to C an octave higher, you will get the C whole tone scale.  Ascending the C whole tone scale would be: [C, D, E, F#, G#, A#].  Descending the scale would be: [C, Bb, Ab, Gb, E, D], which is once again the same set of notes written differently. Once again in the example below, I add the C up an octave to give the scale a complete sound.
+		</p>
+		<p>
+			<input ng-click="ctrl.k.playScale([12,14,16,18,20,22,24])" type="button" value="Play Whole-tone Ascending" class="btn btn-lg">
+			<input ng-click="ctrl.k.playScaleDescending([12,14,16,18,20,22,24])" type="button" value="Play Whole-tone Descending" class="btn btn-lg">
+		</p>
+	</div>
+</div>
+
+<div class="piano">
+	<ol class="scale-1">
+		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
+	</ol> 
+</div>
+<div class="row volume">
+	<br />
+	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
+	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
+</div>
+<br />

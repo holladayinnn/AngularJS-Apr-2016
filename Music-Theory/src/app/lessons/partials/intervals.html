@@ -1,0 +1,49 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12">
+	  	<h4>Introduction to Intervals</h4>
+	  </div>
+</div>
+	
+<div class="row"> 
+	<div class="col-lg-8 col-md-8">
+		<p>
+			An <strong>interval</strong> is the difference between two notes or pitches.  Intervals, along with steps, are the building blocks of melodies, scales and chords.
+		</p>
+		<p>
+			You can measure intervals using whole steps and half steps. Interval names are usually associated with numbers such as seconds, thirds, fourths, fifths, sixths, and so on depending on how big the difference is between the two notes.
+		</p>
+		<p>
+			<strong> Examples: </strong> The interval name of <strong>two notes</strong> a <strong>half step</strong> apart, such as E and F, is a <strong>minor second</strong>.  The interval name of <strong>two notes</strong> a <strong>whole step</strong> apart, such as C and D, is a <strong>major second</strong>.  The interval name of <strong>two notes</strong> a <strong>whole and a half step</strong> apart, such as E and G, is a <strong>minor third</strong>.  The interval name of <strong>two notes</strong> that are <strong>two whole steps</strong> apart, such as G and B, is a <strong>major third</strong>.
+		</p>
+		<p>
+			Do not worry about understanding exactly how intervals are named yet.  I will explain in a future lesson.
+		</p>
+		<p>
+			You can describe intervals as being <strong>consonant</strong> or <strong>dissonant</strong>.  These are subjective terms to describe whether you think the two notes in the interval sound harmonious/agreeable when played together (consonant) or conflicting/tense when played together (dissonant).
+		</p>
+	</div>
+</div>
+
+<div class="piano">
+	<ol class="scale-1">
+		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
+	</ol> 
+</div>
+<div class="row volume">
+	<br />
+	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
+	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
+</div>
+<br />

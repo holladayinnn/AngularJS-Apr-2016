@@ -1,0 +1,124 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12">
+	  	<h4>Diatonic Intervals</h4>
+	  </div>
+</div>
+	
+<div class="row"> 
+	<div class="col-lg-8 col-md-8">
+		<p>
+			<strong>Diatonic</strong> means within the scale.
+		</p>
+		<p>
+			Counting intervals by whole steps and half steps can be tedious and many times we are playing or writing a song that is in one key.  In this case, it may be helpful to think of intervals diatonically.
+		</p>
+		<p>
+			A <strong>diatonic interval</strong> is the number of scale degrees between two notes counting both of the notes. For instance, in the C major scale, D is the second scale degree of the scale and is therefore a diatonic interval of a second from C. F is the fourth scale degree of the C major scale and is a diatonic interval of a fourth from C.
+		</p>
+		<p><strong>Diatonic intervals in the C major scale:</strong></p>
+		<table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>First Note</th>
+		        <th>Second Note</th>
+		        <th>Diatonic interval</th>
+		        <th># of Scale degrees apart</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>C</td>
+		        <td>C</td>
+		        <td>Unison</td>
+		        <td>1</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>D</td>
+		        <td>Second</td>
+		        <td>2</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>E</td>
+		        <td>Third</td>
+		        <td>3</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>F</td>
+		        <td>Fourth</td>
+		        <td>4</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>G</td>
+		        <td>Fifth</td>
+		        <td>5</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>A</td>
+		        <td>Sixth</td>
+		        <td>6</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>B</td>
+		        <td>Seventh</td>
+		        <td>7</td>
+		      </tr>
+		      <tr>
+		        <td>C</td>
+		        <td>higher C</td>
+		        <td>Octave</td>
+		        <td>8</td>
+		      </tr>
+		    </tbody>
+		  </table>
+		<p>
+			Diatonic intervals can be used to compare any two notes of the scale; the interval does not have to include the root.  For example, D to F in the C major scale, is three scale degrees apart, and therefore creates a diatonic third interval.  Also, E to B is five scale degrees apart, and therefore creates a diatonic fifth.
+		</p>
+		<p>
+			Diatonic intervals are mostly useful when describing the intervals of a seven-note or heptatonic scale such as the major scale, since there are exactly seven note letters in western music.  When scales have more or fewer notes, such as in an octatonic or hexatonic scale, diatonic intervals may not be descriptive enough.
+		</p>
+	  </div>
+</div>
+
+<div class="piano">
+	<ol class="scale-1">
+		<li ng-mousedown="ctrl.k.playNote(0)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(1)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(2)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(3)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(4)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<li ng-mousedown="ctrl.k.playNote(5)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(6)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(7)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(8)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(9)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(10)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(11)" ng-mouseup="ctrl.k.stopNote()">B</li>
+	</ol>
+	<ol class="scale-2">
+		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<!-- <li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li>  -->
+	</ol> 
+</div>
+<div class="row volume">
+	<br />
+	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
+	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
+</div>
+<br />

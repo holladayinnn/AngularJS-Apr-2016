@@ -1,0 +1,58 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12">
+	  	<h4>The Major Scale</h4>
+	  </div>
+</div>
+	
+<div class="row"> 
+	<div class="col-lg-8 col-md-8">
+		<p>
+			The <strong>major scale</strong>, known modally as the ionian scale, is one of the most important scales in western music.  The major scale is a seven note scale and therefore referred to as a heptatonic scale.
+		</p>
+		<p>
+			<input ng-click="ctrl.k.playScale([12,14,16,17,19,21,23,24]);" ng-click="!ctrl.toggle" type="button" value="Play Major Scale" class="btn btn-lg">
+		</p>
+		</p>
+		<p>
+			The <strong>C major scale</strong> is the only major scale with no sharps or flats, and it consists of the notes ascending and descending: [C, D, E, F, G, A, B].  If you play all of the white notes on the piano from C to C an octave higher, you will be playing the C major scale.
+		<p>
+			The <strong>formula</strong> for a major scale is <strong> whole step, whole step, half step, whole step, whole step, whole step, half step</strong>. For example, in the C major scale, C to D is a whole step, D to E is a whole step, E to F is a half step, F to G is a whole step, G to A is a whole step, A to B is a whole step, and B to C is a half step.
+		</p>
+		<p>
+			You can use this major scale formula to put the scale in other <strong>keys</strong>.  If you wanted to get the major scale in the key D for example, you would start on D and use the same formula: [WS, WS, HS, WS, WS, WS, HS].  The D major scale consists of the notes: [D, E, F#, G, A, B, C#].  The note of the key you are in (in this case D) is called <strong>the tonic</strong>, <strong>the root</strong>, or <strong>the tonal center</strong>.
+		</p>
+		<p>
+			You might also recognize this scale as Do, Re, Mi, Fa, So, La, Ti, Do.
+		</p>
+	  </div>
+</div>
+
+<div class="piano">
+	<ol class="scale-1">
+		<li ng-mousedown="ctrl.k.playNote(0)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(1)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(2)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(3)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(4)" ng-mouseup="ctrl.k.stopNote()">E</li>
+		<li ng-mousedown="ctrl.k.playNote(5)" ng-mouseup="ctrl.k.stopNote()">F</li>
+		<li ng-mousedown="ctrl.k.playNote(6)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+		<li ng-mousedown="ctrl.k.playNote(7)" ng-mouseup="ctrl.k.stopNote()">G</li>
+		<li ng-mousedown="ctrl.k.playNote(8)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+		<li ng-mousedown="ctrl.k.playNote(9)" ng-mouseup="ctrl.k.stopNote()">A</li>
+		<li ng-mousedown="ctrl.k.playNote(10)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+		<li ng-mousedown="ctrl.k.playNote(11)" ng-mouseup="ctrl.k.stopNote()">B</li>
+	</ol>
+	<ol class="scale-2">
+		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+	</ol> 
+</div>
+<div class="row volume">
+	<br />
+	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
+	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
+</div>
+<br />

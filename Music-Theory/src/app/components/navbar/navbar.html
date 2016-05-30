@@ -1,0 +1,19 @@
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="{{ctrl.navStates.kHomeState}}">
+        <span class="glyphicon glyphicon-home"></span> Tommy's Music Theory
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a ui-sref="{{ctrl.navStates.kHomeState}}">Home</a></li>
+        <li ui-sref-active="active"><a ui-sref="{{ctrl.navStates.kFreeplayState}}">Free Play</a></li>
+        <li ui-sref-active="active"><a ui-sref="{{ctrl.navStates.kLessonState}}">Lessons</a></li>
+        <li ui-sref-active="active"><a ui-sref="{{ctrl.navStates.kEartrainingState}}">Ear Training</a></li>
+        <li ui-sref-active="active"><a ui-sref="{{ctrl.navStates.kTheoryState}}">Theory</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
