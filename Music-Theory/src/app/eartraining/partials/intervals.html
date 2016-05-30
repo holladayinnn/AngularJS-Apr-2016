@@ -1,15 +1,25 @@
-<h3>Intervals</h3>
+<h3>Relative Pitch Interval Ear Training</h3>
 
-<div class="levels">
-	<ul>
-		<li ng-click="ctrl.level = 1">Level 1</li>
-		<li ng-click="ctrl.level = 2">Level 2</li>
-		<li ng-click="ctrl.level = 3">Level 3</li>
-		<li ng-click="ctrl.level = 4">Level 4</li>
-	</ul>
-</div>
+<div class="row">
+	<div class="levels col-md-3">
+	<h3> Level <span ng-bind="ctrl.sk.level"></span> </h3>
+	<p ng-bind="ctrl.sk.levelDescription"></p>
+		<ul>
+			<li ng-repeat="level in ctrl.levels" ng-click="ctrl.sk.resetLevel(level.num, ctrl.et)"><a>Level <span ng-bind="level.num"></span></a></li>
+		</ul>
+	</div>
 
-<div>
-<h4> Level <span ng-bind="ctrl.level"></span> </h4>
-<!-- <input ng-click="ctrl.keyboard.playInterval(12,17)" type="button" value="Play Interval" class="btn"> -->
+	<div class="col-md-9">
+		<div>
+			<h3> Score: <span ng-bind="ctrl.sk.score"></span></h3>
+			<input ng-click="ctrl.et.playInterval(ctrl.sk.level)" type="button" value="Play Interval" class="btn btn-info">
+		</div>
+
+		<div class="piano" id="interval-trainer">
+			<ol class="scale-1">
+				<li ng-repeat="key in ctrl.pianoKeys" ng-bind="key.interval" ng-class="key.class" 
+				ng-mousedown="ctrl.k.playNote(ctrl.et.frq1 + $index)" ng-mouseup="ctrl.k.stopNote()" ng-click="ctrl.sk.checkAnswer($index, ctrl.et)"></li>
+			</ol> 
+		</div>
+	</div>
 </div>

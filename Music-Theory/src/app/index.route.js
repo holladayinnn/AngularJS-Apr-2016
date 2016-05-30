@@ -26,7 +26,7 @@
       controller: 'LessonsController as ctrl'
     })
     .state(STATES.kEartrainingState, {
-      url: '/contacts',
+      url: '/eartraning',
       templateUrl: 'app/eartraining/partials/eartraining.main.html',
       controller: 'EartrainingController as ctrl'
     })
