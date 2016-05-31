@@ -1,0 +1,57 @@
+#interval-trainer > ol > li {
+  font-size: 0.8rem;
+  width: 50px;
+}
+
+#interval-trainer > ol > li.ebony {
+	// color: gainsboro;
+	width: 40px;
+}
+
+#interval-trainer > ol > li.ivory {
+	// color: #333
+}
+
+.eartrainer {
+	display: inline-block;
+}
+
+.eartrainer-header h3{
+	margin-top: 10px;
+	display:inline-block;
+}
+
+.eartrainer-details {
+	display: inline-block;
+}
+
+.eartrainer-score, .eartrainer-correct, .eartrainer-attempted {
+	margin-right: 20px;
+	float:left;
+} 
+
+.eartrainer {
+	padding: 20px;
+	border: 2px solid #5bc0de;
+	border-radius: 1%;
+}
+
+.animate-show i, .animate-show h3{
+  float:left;
+}
+
+.animate-show i {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}

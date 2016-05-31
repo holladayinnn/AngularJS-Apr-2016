@@ -1,11 +1,16 @@
-angular.module('MyApp.Eartraining')
+angular.module('MyApp.Exercise')
 .value("directions", ["up","down","together"])
 
 .value("intervalDistances", [0,12,1,2,3,4,5,6,7,8,9,10,11])
 
 .value("levelDescription", [{num: 0, description: "Unison and Octave"}, {num: 1, description: "Minor 2nd and Major 2nd"}, 
 	{num: 2, description: "Minor 3rd and Major 3rd"}, {num: 3, description: "Perfect 4th, Diminished 5th, and Perfect 5th,"}, 
-	{num: 4, description: "Minor 6th and Major 6th"}, {num: 5, description: "Minor 7th and Major 7th"}])
+	{num: 4, description: "Minor 6th and Major 6th"}, {num: 5, description: "Minor 7th and Major 7th"}, 
+	{num: 6, description: "Unison, Octave, Minor 2nd, Major 2nd"}, 
+	{num: 7, description: "Unison, Octave, Minor 2nd, Major 2nd, Minor 3rd, Major 3rd"},
+	{num: 8, description: "Unison, Octave, Minor 2nd, Major 2nd, Minor 3rd, Major 3rd, Perfect 4th, Diminished 5th, Perfect 5th"},
+	{num: 9, description: "Unison, Octave, Minor 2nd, Major 2nd, Minor 3rd, Major 3rd, Perfect 4th, Diminished 5th, Perfect 5th, Minor 6th, Major 6th"},
+	{num: 10, description: "All combinations"}])
 
 .value("pianoKeys", [{interval: "Perfect Unison", class: "ivory"}, {interval: "Minor 2nd", class: "ebony"},
 	{interval: "Major 2nd", class: "ivory"},{interval: "Minor 3rd", class: "ebony"}, 
@@ -32,7 +37,13 @@ angular.module('MyApp.Eartraining')
 	}
 
 	EarTrainer.prototype.createNew = function(level) {
-		this.direction = directions[Math.floor(Math.random() * 2)];
+
+		if(level <= 5) {
+			this.direction = directions[Math.floor(Math.random() * 2)];
+		}
+		else {
+			this.direction = directions[Math.floor(Math.random() * 3)];
+		}
 
 		this.frq1 = Math.floor(Math.random() * 25);
 		if (level <= 2) {
@@ -44,9 +55,15 @@ angular.module('MyApp.Eartraining')
 		else if(level <= 5) {
 			this.frq2 = this.frq1 + intervalDistances[(Math.floor(Math.random() * 2)) + (2*level + 1)];
 		}
+		else if(level <= 7) {
+			this.frq2 = this.frq1 + intervalDistances[(Math.floor(Math.random() * (2*(level-6) + 4)))];
+		}
+		else if(level <= 10) {
+			this.frq2 = this.frq1 + intervalDistances[(Math.floor(Math.random() * (2*(level-8) + 9)))];
+		}
 	}
 
-	EarTrainer.prototype.playInterval = function() {
+	EarTrainer.prototype.play = function() {
 		this.oscillator = this.myAudioContext.createOscillator();
 		this.oscillator2 = this.myAudioContext.createOscillator();
 		this.gainNode = this.myAudioContext.createGain();
@@ -101,20 +118,22 @@ angular.module('MyApp.Eartraining')
 	return EarTrainer;
 })
 
-.factory('ScoreKeeper', function (levelDescription) {
+.factory('ScoreKeeper', function (levelDescription, $timeout) {
 	function ScoreKeeper() {
 		this.score = 0;
 		this.level = 0;
-		this.levelDescription = levelDescription[this.level].description;
 		this.numCorrect = 0;
 		this.numAttempted = 0;
+		this.numToPass = 12;
+		this.numToFail = 3;
 	}
 
 	ScoreKeeper.prototype.resetLevel = function (level, tester){
 		this.score = 0;
 		this.level = level;
-		this.levelDescription = levelDescription[this.level].description;
 		this.numCorrect = 0;
+		this.numAttempted = 0;
+		console.log(this.level);
 		tester.createNew(this.level);
 	}
 
@@ -123,16 +142,25 @@ angular.module('MyApp.Eartraining')
 	}
 
 	ScoreKeeper.prototype.checkAnswer = function (answer, tester) {
+		this.numAttempted++;
 		if (tester.checkAnswer(answer) == true) {
 			this.addtoScore();
 			this.numCorrect++;
-			console.log("correct")
 		}
-		else {
-			console.log("false")
+
+		if (this.numAttempted != 0) {
+			if(this.numAttempted % this.numToPass == 0 && this.numCorrect > this.numAttempted-this.numToFail) {
+				this.level+=1;
+			}
+			else if (this.numCorrect <= this.numAttempted-this.numToFail){
+				this.resetLevel(this.level, tester);
+			}
 		}
-		this.numAttempted++;
 		tester.createNew(this.level);
+
+		$timeout(function() {
+			tester.play();
+		}, 1000);
 	}
 
 	return ScoreKeeper;

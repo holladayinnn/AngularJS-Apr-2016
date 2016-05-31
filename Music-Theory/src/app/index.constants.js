@@ -8,8 +8,7 @@
         kHomeState: 'home',
         kFreeplayState: 'freeplay',
     	kLessonState: 'lessons',
-    	kEartrainingState: 'earTraining',
-    	kTheoryState: 'Theory',
+    	kExerciseState: 'exercises',
 
     	// Lesson child states
     	kNoteState: 'lessons.note',
@@ -20,13 +19,9 @@
     	kDiatonicIntervalState: 'lessons.diatonicInterval',
         kChromaticIntervalState: 'lessons.chromaticInterval',
 
-        //Ear Training Child States
-        kETIntervalState: 'earTraining.interval'
+        //Exercise Child States
+        kETIntervalState: 'exercises.interval'
 
-    	// Store child states
-    	// kShoesState: 'store.shoes',
-    	// kPantsState: 'store.pants',
-    	// kShirtsState: 'store.shirts'
     });
 
 })();

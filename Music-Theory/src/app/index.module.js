@@ -10,8 +10,7 @@
 	    'MyApp.Home',
 	    'MyApp.Freeplay',
 	    'MyApp.Lessons',
-	    'MyApp.Eartraining',
-	    'MyApp.Theory'
+	    'MyApp.Exercise'
 	]);
 
 })();

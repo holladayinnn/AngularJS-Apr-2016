@@ -25,18 +25,11 @@
       templateUrl: 'app/lessons/partials/lessons.main.html',
       controller: 'LessonsController as ctrl'
     })
-    .state(STATES.kEartrainingState, {
-      url: '/eartraning',
-      templateUrl: 'app/eartraining/partials/eartraining.main.html',
-      controller: 'EartrainingController as ctrl'
+    .state(STATES.kExerciseState, {
+      url: '/exercises',
+      templateUrl: 'app/exercises/partials/exercises.main.html',
+      controller: 'ExerciseController as ctrl'
     })
-    .state(STATES.kTheoryState, {
-      url: '/store',
-      // template: '<h3>Hello world</h3>'
-      templateUrl: 'app/theory/partials/store.main.html',
-      controller: 'TheoryController as ctrl'
-    })
-
 
     //Lessons child-states
     .state(STATES.kNoteState, {
@@ -71,38 +64,8 @@
     //Ear Training child-states
     .state(STATES.kETIntervalState, {
       url:'/eartraining-intervals',
-      templateUrl: 'app/eartraining/partials/intervals.html'
-    })
-
-
-    // .state(STATES.kFounderState, {
-    //   //url:'/founder',
-    //   templateUrl: 'app/home/partials/founder.html'
-    // })
-
-    // // Store child-sibling states
-    // .state(STATES.kShoesState, {
-    //   views: {
-    //     listView: {
-    //       templateUrl: 'app/store/partials/shoesList.html'
-    //     },
-    //     detailView: {
-    //       templateUrl: 'app/store/partials/shoesDetails.html'
-    //     }
-    //   }
-    // })
-    // .state(STATES.kPantsState, {
-    //   views: {
-    //     listView: {
-    //       templateUrl: 'app/store/partials/pantsList.html'
-    //     },
-    //     detailView: {
-    //       templateUrl: 'app/store/partials/pantsDetails.html'
-    //     }
-    //   }
-    // })
-
-    ;
+      templateUrl: 'app/exercises/partials/intervals.html'
+    });
 
 
 

@@ -1,0 +1,46 @@
+<br />
+
+<div>
+	<div class="eartrainer">
+		<div class="row">
+			<div class="levels col-md-3">
+			<h4> Level <span ng-bind="ctrl.level"></span> </h4>
+			<strong><p ng-bind="ctrl.levels[ctrl.level].description"></p></strong>
+				<ul class="list-group">
+					<button class="list-group-item" type="button" ng-repeat="level in ctrl.levels" ng-click="ctrl.resetLevel(level.num, ctrl.et)">Level <span ng-bind="level.num"></span></button>
+				</ul>
+			</div>
+
+			<div class="col-md-9">
+				<div class="eartrainer-details">
+					<div class="eartrainer-header">
+						<h1>Relative Pitch Interval Ear Training</h1>
+					</div>
+					<br />
+					<div class="animate-show" ng-show="ctrl.levelUp"><i class="fa fa-smile-o fa-2x" aria-hidden="true"></i><h3>Level <span ng-bind="ctrl.level"></span>: <span ng-bind="ctrl.levels[ctrl.level].description"></span></h3></div>
+					<div class="animate-show" ng-show="ctrl.startOver"><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i><h3>You missed <span ng-bind="ctrl.sk.numToFail"></span>! Score back to 0!</h3></div>
+
+					<div class="eartrainer-button">
+						<input ng-click="ctrl.et.play(ctrl.sk.level)" type="button" value="Play Interval" class="btn btn-sm btn-info btn-block">
+					</div>
+					<div class="eartrainer-score">
+						<h3> Score: <strong><span ng-bind="ctrl.sk.score"></span></h3></strong>
+					</div>
+					<div class="eartrainer-attempted">
+						<h3> Attempted: <strong><span ng-bind="ctrl.sk.numAttempted"></span></h3></strong>
+					</div>
+					<div class="eartrainer-correct">
+						<h3> Correct: <strong><span ng-bind="ctrl.sk.numCorrect"></span></h3></strong>
+					</div>
+				</div>
+				<br />
+				<div class="piano" id="interval-trainer">
+					<ol class="scale-1">
+						<li ng-repeat="key in ctrl.pianoKeys" ng-bind="key.interval" ng-class="key.class" 
+						ng-mousedown="ctrl.k.playNote(ctrl.et.frq1 + $index)" ng-mouseup="ctrl.k.stopNote()" ng-click="ctrl.checkAnswer($index, ctrl.et)"></li>
+					</ol> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
