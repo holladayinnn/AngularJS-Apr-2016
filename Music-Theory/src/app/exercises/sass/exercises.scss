@@ -8,12 +8,10 @@
 	width: 40px;
 }
 
-#interval-trainer > ol > li.ivory {
-	// color: #333
-}
-
 .eartrainer {
 	display: inline-block;
+	width: 90%;
+	//background-color: #eff;
 }
 
 .eartrainer-header h3{
@@ -26,8 +24,9 @@
 }
 
 .eartrainer-score, .eartrainer-correct, .eartrainer-attempted {
-	margin-right: 20px;
-	float:left;
+	text-align: center;
+	width: 33%;
+	float: left;
 } 
 
 .eartrainer {
@@ -36,13 +35,24 @@
 	border-radius: 1%;
 }
 
+.level-up {
+	color: green;
+}
+
+.start-over {
+	color: red;
+}
+
 .animate-show i, .animate-show h3{
-  float:left;
+  float: left;
+}
+
+.animate-show h3 {
+	margin-right: 10px;
 }
 
 .animate-show i {
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-top: 22px;
 	margin-right: 10px;
 }
 

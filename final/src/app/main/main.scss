@@ -1,0 +1,76 @@
+h1 {
+  color: green;
+}
+
+$ebony : #171C1A;
+$ivory: white;
+
+ ol { 
+  position: relative; 
+  padding: 0; 
+  margin: 0 0 10px; 
+  display: inline-block;
+  //float: left;
+  font-size: 0; // to get rid of spaces between keys. ugly, I know.
+}
+
+li{
+  font-size: 16px;
+  font-size: 1rem;
+  transition: all 0.1s ease-in-out; //  just a little animation
+
+  padding: 0; 
+  margin: 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 220px 15px 50px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 5px 5px #aaa;
+
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  color: transparent;
+  &:hover {
+    color: #C0C1BD;
+    
+  }
+  &:active{
+    box-shadow: none;
+    top: 5px;
+    color: #333;
+  }
+  &.ebony {
+    /* build the key shape */
+    z-index: 2;
+    position: absolute;
+    width: 32px;
+    top: 0px;
+    margin-left: -16px; // align the ebony keys
+    padding: 130px 0px 10px;
+
+    /* Typography */
+    text-align: center;
+    font-size: 0.66667rem;
+    color: transparent;
+   
+    
+    border-radius: 0 0 2px 2px;
+    border-width: 0 6px 12px;
+    border-color: #000;
+    border-bottom-color: #424546;
+    background: $ebony;
+    box-shadow: 0 3px 5px #ccc, inset 0px 0px 0px 1px rgba(gainsboro,0.2);
+    
+    &:hover {
+        color: gainsboro;
+    }
+    
+    &:active {
+      border-bottom-width: 8px;
+      padding-top: 135px;
+      color: $ivory;
+    }
+  }
+}

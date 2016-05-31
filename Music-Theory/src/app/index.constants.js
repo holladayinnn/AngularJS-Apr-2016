@@ -9,6 +9,7 @@
         kFreeplayState: 'freeplay',
     	kLessonState: 'lessons',
     	kExerciseState: 'exercises',
+        kAuthState: 'auth',
 
     	// Lesson child states
     	kNoteState: 'lessons.note',
@@ -20,7 +21,11 @@
         kChromaticIntervalState: 'lessons.chromaticInterval',
 
         //Exercise Child States
-        kETIntervalState: 'exercises.interval'
+        kETIntervalState: 'exercises.interval',
+
+        //Auth Child States
+        kLoginState: 'auth.login',
+        kRegisterState: 'auth.register'
 
     });
 

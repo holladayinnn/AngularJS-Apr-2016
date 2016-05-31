@@ -4,7 +4,7 @@ angular.module('MyApp.Freeplay')
 	var self = this;
 
 	self.k = new Keyboard();
-	self.volumeLevel = 10;
+	self.volumeLevel = 2;
 	self.volumeIcon = volumeIcon[Math.round(self.volumeLevel/5)];
 
 	self.changeVolume = function() {

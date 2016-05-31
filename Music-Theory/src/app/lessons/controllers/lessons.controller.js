@@ -7,7 +7,7 @@ angular.module('MyApp.Lessons')
 
 	self.k = new Keyboard();
 
-	self.volumeLevel = 10;
+	self.volumeLevel = 2;
 	self.volumeIcon = volumeIcon[Math.round(self.volumeLevel/5)];
 	self.changeVolume = function() {
 		self.volumeIcon = volumeIcon[Math.round(self.volumeLevel/5)];

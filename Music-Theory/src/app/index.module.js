@@ -7,6 +7,7 @@
     	'ngResource',
 	    'ui.router',
 	    'ui.bootstrap',
+	    'MyApp.Auth',
 	    'MyApp.Home',
 	    'MyApp.Freeplay',
 	    'MyApp.Lessons',

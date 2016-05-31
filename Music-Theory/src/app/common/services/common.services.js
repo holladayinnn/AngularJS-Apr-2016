@@ -5,7 +5,7 @@ angular.module('MyApp.Common')
 	311.13,329.63,349.23,369.99,392.00,415.30,440.00,
 	466.16,493.88,523.25,554.37,587.33,622.25,659.25,
 	698.46,739.99,783.99,830.61,880.00,932.33,987.77,
-	1046.50])
+	1046.50, 1108.73, 1174.66, 1244.51, 1318.51])
 
 .value("volumeIcon", ['fa-volume-off', 'fa-volume-down', 'fa-volume-up'])
 
@@ -73,7 +73,7 @@ angular.module('MyApp.Common')
 			this.oscillator = this.myAudioContext.createOscillator();
 			this.gainNode = this.myAudioContext.createGain();
 			
-			this.gainNode.gain.value = 1;
+			this.gainNode.gain.value = .2;
 			this.oscillator.type = this.type;
 		 	this.oscillator.frequency.value = frequencyList[scaleArray[i]];
 		 	this.gainNode.connect(this.myAudioContext.destination);
@@ -89,7 +89,7 @@ angular.module('MyApp.Common')
 			this.oscillator = this.myAudioContext.createOscillator();
 			this.gainNode = this.myAudioContext.createGain();
 			
-			this.gainNode.gain.value = 1;
+			this.gainNode.gain.value = .2;
 			this.oscillator.type = this.type;
 		 	this.oscillator.frequency.value = frequencyList[scaleArray[i]];
 		 	this.gainNode.connect(this.myAudioContext.destination);
@@ -118,10 +118,10 @@ angular.module('MyApp.Common')
 		this.oscillator3.frequency.value = frequencyList[frq1];
 		this.oscillator4.frequency.value = frequencyList[frq2];
 
-		this.gainNode.gain.value = 1;
-		this.gainNode2.gain.value = 1;
-		this.gainNode3.gain.value = 1;
-		this.gainNode4.gain.value = 1;
+		this.gainNode.gain.value = .2;
+		this.gainNode2.gain.value = .2;
+		this.gainNode3.gain.value = .2;
+		this.gainNode4.gain.value = .2;
 
 		this.gainNode.connect(this.myAudioContext.destination);
 		this.oscillator.connect(this.gainNode);

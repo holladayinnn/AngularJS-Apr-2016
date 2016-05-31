@@ -1,0 +1,19 @@
+<div class="container">
+
+  <h1 ng-bind="ctrl.greeting"></h1>
+	<button class="btn btn-default" 
+		ng-click="ctrl.makeRequest()">Go!</button>
+
+
+	<h3>People</h3>
+	<div ng-repeat="person in ctrl.people">
+		<label>Name</label><span ng-bind="person.name"></span>
+	</div>
+
+	<h3>Addresses</h3>
+	<input type="text" ng-model="ctrl.userText" ng-change="ctrl.onAddressChange(ctrl.userText)">
+
+	<div ng-repeat="address in ctrl.addresses">
+		<label ng-bind="address"></label>
+	</div>
+</div>

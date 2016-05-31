@@ -1,0 +1,31 @@
+<div class="container">
+
+<!-- 	<pre>{{ ctrl.myForm | json}}</pre> -->
+
+  	<h1 ng-bind="ctrl.greeting" ng-submit="ctrl.submitTheForm()"></h1>
+
+  	<form name="ctrl.myForm">
+  		<!-- <input type="checkbox" ng-model="ctrl.usernameRequre">Username Required -->
+  		<input type="text" ng-model="ctrl.username" placeholder="username" name="usernameInput" required><br/>
+  		<input type="email" ng-model="ctrl.email" placeholder="email"><br/>
+  		<input type="text" ng-model="ctrl.phone" placeholder="phone" name="phoneInput" ng-pattern="/^\(\d\d\d\) \d\d\d-\d\d\d\d$/"><br/>
+  			<div ng-show="ctrl.myForm.phoneInput.$invalid"> Please enter a pattern matching (###) ###-#### </div>
+		<input type="submit" value="submit my Form" ng-disabled="ctrl.myForm.$invalid"><br/>
+
+		<!-- <select>
+			<option>Option A</option>
+			<option>Option B</option>
+		</select> -->
+
+		<!-- <select ng-model="ctrl.userState" ng-options="state as state for state in ctrl.states">
+
+		</select><br /> -->
+
+		<!-- <select ng-model="ctrl.userState" ng-options="state.abbr as state.name for state in ctrl.states"></select> -->
+
+		<select ng-model="ctrl.userState" ng-options="key as value for (key, value) in ctrl.states"></select>
+
+		<pre>{{ ctrl.userState | json }} </pre>
+  	</form>
+  	
+</div>

@@ -30,6 +30,11 @@
       templateUrl: 'app/exercises/partials/exercises.main.html',
       controller: 'ExerciseController as ctrl'
     })
+    .state(STATES.kAuthState, {
+      url: '/auth',
+      templateUrl: 'app/auth/partials/auth.main.html',
+      controller: 'AuthController as ctrl'
+    })
 
     //Lessons child-states
     .state(STATES.kNoteState, {
@@ -65,6 +70,16 @@
     .state(STATES.kETIntervalState, {
       url:'/eartraining-intervals',
       templateUrl: 'app/exercises/partials/intervals.html'
+    })
+
+    //Auth child-states
+    .state(STATES.kLoginState, {
+      url: '/login',
+      templateUrl: 'app/auth/partials/login.html',
+    })
+    .state(STATES.kRegisterState, {
+      url: '/login',
+      templateUrl: 'app/auth/partials/register.html',
     });
 
 
