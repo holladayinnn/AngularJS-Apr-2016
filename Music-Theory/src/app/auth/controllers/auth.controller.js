@@ -1,6 +1,6 @@
 angular.module('MyApp.Auth')
 
-.controller('AuthController', function(STATES) {
+.controller('AuthController', function(STATES, Login, Register) {
 	var self = this;
 	self.navStates = STATES;
 
@@ -15,4 +15,12 @@ angular.module('MyApp.Auth')
       password : ""
     };
 
+    self.onSubmit = function (authorize) {
+    	if (authorize == "login") {
+    		Login.onSubmit(self.loginCredentials);
+    	}
+    	else if (authorize == "register") {
+    		Register.onSubmit(self.registerCredentials);
+    	}
+    };
 });

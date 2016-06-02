@@ -11,7 +11,8 @@
 	    'MyApp.Home',
 	    'MyApp.Freeplay',
 	    'MyApp.Lessons',
-	    'MyApp.Exercise'
+	    'MyApp.Exercise',
+	    'MyApp.Leaderboard'
 	]);
 
 })();

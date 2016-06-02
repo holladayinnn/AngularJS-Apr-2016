@@ -3,7 +3,7 @@
     <h3 class="form-signin-heading">Sign in</h3>
     <p>Not a member? Please <a ui-sref="{{ctrl.navStates.kRegisterState}}">register</a> instead.</p>
   
-    <form>
+    <form ng-submit="ctrl.onSubmit('login')">
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="ctrl.loginCredentials.email">

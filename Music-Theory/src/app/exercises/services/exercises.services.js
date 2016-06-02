@@ -24,6 +24,15 @@ angular.module('MyApp.Exercise')
 	{interval: "Major 9th", class: "ivory"}, {interval: "Minor 10th", class: "ebony"},
 	{interval: "Major 10th", class: "ivory"}])
 
+.factory('_UserAddResource', function($resource) {
+	console.log("cadff");
+	return $resource('/api/add_User', null, {
+		add_User: {
+			method: 'PUT'
+		}
+	});
+})
+
 .factory('EarTrainer', function(frequencyList, directions, intervalDistances, etlevelDescription, $window) {
 	function EarTrainer() {
 		var AudioContext = $window.AudioContext || $window.webkitAudioContext;
