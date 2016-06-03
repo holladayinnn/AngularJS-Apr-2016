@@ -32,7 +32,7 @@
     })
     .state(STATES.kLeaderboardState, {
       url: '/leaderboard',
-      templateUrl: 'app/leaderboard/partials/leadboard.main.html',
+      templateUrl: 'app/leaderboard/partials/leaderboard.main.html',
       controller: 'LeaderboardController as ctrl'
     })
     .state(STATES.kAuthState, {
