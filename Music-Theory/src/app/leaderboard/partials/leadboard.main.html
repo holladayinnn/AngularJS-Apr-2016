@@ -15,6 +15,7 @@
 			    </thead>
 			    <tbody>
 			      <tr ng-repeat="leader in ctrl.leaders">
+			      	<td ng-bind="$index+1"></td>
 			        <td ng-bind="leader.Username"></td>
 			        <td ng-bind="leader.Score"></td>
 			      </tr>

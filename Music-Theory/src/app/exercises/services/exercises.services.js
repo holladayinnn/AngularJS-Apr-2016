@@ -3,7 +3,7 @@ angular.module('MyApp.Exercise')
 
 .value("intervalDistances", [0,12,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16])
 
-.value("etlevelDescription", [{num: 0, description: "Unison and Octave"}, {num: 1, description: "Minor 2nd and Major 2nd"}, 
+.value("itlevelDescription", [{num: 0, description: "Unison and Octave"}, {num: 1, description: "Minor 2nd and Major 2nd"}, 
 	{num: 2, description: "Minor 3rd and Major 3rd"}, {num: 3, description: "Perfect 4th, Diminished 5th, and Perfect 5th"}, 
 	{num: 4, description: "Minor 6th and Major 6th"}, {num: 5, description: "Minor 7th and Major 7th"}, 
 	{num: 6, description: "Unison, Octave, Minor 2nd, Major 2nd"}, 
@@ -25,7 +25,6 @@ angular.module('MyApp.Exercise')
 	{interval: "Major 10th", class: "ivory"}])
 
 .factory('_UserAddResource', function($resource) {
-	console.log("cadff");
 	return $resource('/api/add_User', null, {
 		add_User: {
 			method: 'PUT'
@@ -33,10 +32,13 @@ angular.module('MyApp.Exercise')
 	});
 })
 
-.factory('EarTrainer', function(frequencyList, directions, intervalDistances, etlevelDescription, $window) {
-	function EarTrainer() {
-		var AudioContext = $window.AudioContext || $window.webkitAudioContext;
-		this.myAudioContext  = new AudioContext;
+.factory('_UserUpdateResource', function($resource) {
+	return $resource('/api/update_User');
+})
+
+.factory('IntervalTrainer', function(AudioContext, frequencyList, directions, intervalDistances, itlevelDescription, $window) {
+	function IntervalTrainer() {
+		this.myAudioContext  = AudioContext.get();
   		this.frq1 = 0;
   		this.frq2 = 0;
   		this.volume = 1;
@@ -46,10 +48,10 @@ angular.module('MyApp.Exercise')
   		this.gainNode = null;
   		this.gainNode2 = null;
   		this.direction = directions[0];
-  		this.levels = etlevelDescription.length;
+  		this.levels = itlevelDescription.length;
 	}
 
-	EarTrainer.prototype.createNew = function(level) {
+	IntervalTrainer.prototype.createNew = function(level) {
 
 		if(level <= 5) {
 			this.direction = directions[Math.floor(Math.random() * 2)];
@@ -85,7 +87,7 @@ angular.module('MyApp.Exercise')
 		}
 	}
 
-	EarTrainer.prototype.play = function() {
+	IntervalTrainer.prototype.play = function() {
 		this.oscillator = this.myAudioContext.createOscillator();
 		this.oscillator2 = this.myAudioContext.createOscillator();
 		this.gainNode = this.myAudioContext.createGain();
@@ -128,7 +130,7 @@ angular.module('MyApp.Exercise')
 		}
 	}
 
-	EarTrainer.prototype.checkAnswer = function(answer) {
+	IntervalTrainer.prototype.checkAnswer = function(answer) {
 		if (this.frq2 - this.frq1 == answer) {
 			return true;
 		}
@@ -137,7 +139,7 @@ angular.module('MyApp.Exercise')
 		}
 	}
 
-	return EarTrainer;
+	return IntervalTrainer;
 })
 
 .factory('ScoreKeeper', function ($timeout) {
@@ -146,7 +148,7 @@ angular.module('MyApp.Exercise')
 		this.level = 0;
 		this.numCorrect = 0;
 		this.numAttempted = 0;
-		this.numToPass = 2;
+		this.numToPass = 10;
 		this.numToFail = 3;
 	}
 

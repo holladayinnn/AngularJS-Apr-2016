@@ -11,5 +11,7 @@ angular.module('MyApp.Exercise')
       	self.leaders = response;
     	});
    	}
+
+   	getLeaders();
   // }
 });

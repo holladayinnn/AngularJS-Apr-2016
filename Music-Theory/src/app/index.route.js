@@ -31,7 +31,7 @@
       controller: 'ExerciseController as ctrl'
     })
     .state(STATES.kLeaderboardState, {
-      url: '/auth',
+      url: '/leaderboard',
       templateUrl: 'app/leaderboard/partials/leadboard.main.html',
       controller: 'LeaderboardController as ctrl'
     })
@@ -83,7 +83,7 @@
       templateUrl: 'app/auth/partials/login.html'
     })
     .state(STATES.kRegisterState, {
-      url: '/login',
+      url: '/register',
       templateUrl: 'app/auth/partials/register.html'
     });
 

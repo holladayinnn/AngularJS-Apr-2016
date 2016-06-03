@@ -9,10 +9,40 @@ angular.module('MyApp.Common')
 
 .value("volumeIcon", ['fa-volume-off', 'fa-volume-down', 'fa-volume-up'])
 
-.factory("Keyboard", function(frequencyList, $window) {
+.service("PlayTime", function() {
+	var self = this;
+
+	self.Calculate = function (type, length) {
+		if (type == "k_interval") {
+			return 3100;
+		}
+		else if (type == "it_interval") {
+			return 2000;
+		}
+		else if (type == "scale") {
+			return ((length *.5)) * 1000;
+		}
+		else {
+			return 0;
+		}
+
+	}
+})
+
+.service("AudioContext", function($window) {
+	var self = this;
+	var AudioContext = $window.AudioContext || $window.webkitAudioContext;
+		self.myAudioContext  = new AudioContext;
+
+	self.get = function () {
+		return self.myAudioContext;
+	}
+
+})
+
+.factory("Keyboard", function(frequencyList, $window, AudioContext) {
 	function Keyboard() {
-		var AudioContext = $window.AudioContext || $window.webkitAudioContext;
-		this.myAudioContext  = new AudioContext;
+		this.myAudioContext  = AudioContext.get();
   		this.frequency = 440;
   		this.volume = 1;
   		this.type = 'triangle';
@@ -68,7 +98,6 @@ angular.module('MyApp.Common')
 	}
 
 	Keyboard.prototype.playScale = function(scaleArray) {
-		console.log("here");
 		for (var i = 0; i < scaleArray.length; i++) {
 			this.oscillator = this.myAudioContext.createOscillator();
 			this.gainNode = this.myAudioContext.createGain();
@@ -84,12 +113,11 @@ angular.module('MyApp.Common')
 	}
 
 	Keyboard.prototype.playScaleDescending = function(scaleArray) {
-		console.log("here");
 		for (var i = scaleArray.length-1; i >= 0; i--) {
 			this.oscillator = this.myAudioContext.createOscillator();
 			this.gainNode = this.myAudioContext.createGain();
 			
-			this.gainNode.gain.value = .2;
+			this.gainNode.gain.value = this.volume;
 			this.oscillator.type = this.type;
 		 	this.oscillator.frequency.value = frequencyList[scaleArray[i]];
 		 	this.gainNode.connect(this.myAudioContext.destination);
@@ -118,10 +146,10 @@ angular.module('MyApp.Common')
 		this.oscillator3.frequency.value = frequencyList[frq1];
 		this.oscillator4.frequency.value = frequencyList[frq2];
 
-		this.gainNode.gain.value = .2;
-		this.gainNode2.gain.value = .2;
-		this.gainNode3.gain.value = .2;
-		this.gainNode4.gain.value = .2;
+		this.gainNode.gain.value = this.volume;
+		this.gainNode2.gain.value = this.volume;
+		this.gainNode3.gain.value = this.volume;
+		this.gainNode4.gain.value = this.volume;
 
 		this.gainNode.connect(this.myAudioContext.destination);
 		this.oscillator.connect(this.gainNode);
@@ -146,4 +174,4 @@ angular.module('MyApp.Common')
 	}
 
 	return Keyboard;
-}) ;
+});

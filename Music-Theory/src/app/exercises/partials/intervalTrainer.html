@@ -1,0 +1,61 @@
+<div class="intervaltrainer">
+		<div class="row">
+			<div class="levels col-md-3">
+			<h4> Level <span ng-bind="itCtrl.level"></span> </h4>
+			<strong><p ng-bind="itCtrl.itlevels[itCtrl.level].description"></p></strong>
+				<ul class="list-group">
+					<button class="list-group-item" type="button" ng-repeat="level in itCtrl.itlevels" ng-click="itCtrl.resetLevel(level.num)">Level <span ng-bind="level.num"></span></button>
+				</ul>
+			</div>
+
+			<div class="col-md-9">
+				<div class="intervaltrainer-details">
+					<div class="intervaltrainer-header">
+						<h1>Relative Pitch Interval Ear Training</h1>
+					</div>
+					<br />
+					<div class="animated-text" ng-class="itCtrl.hideText">
+						<div class="animate-show level-up" ng-if="itCtrl.levelUp">
+							<h3>Level <span ng-bind="itCtrl.level"></span>! 
+							<span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
+						</div>
+						<div class="animate-show start-over" ng-if="itCtrl.startOver">
+							<h3> Answer was <span ng-bind="itCtrl.pianoKeys[itCtrl.it.frq2-itCtrl.it.frq1].interval"></span></h3>
+							<br />
+							<h3>You missed 
+							<span ng-bind="itCtrl.sk.numToFail"></span>! Back to 0!</h3> <i class="fa fa-frown-o fa-2x" aria-hidden="true"></i>
+						</div>
+						<div class="animate-show beat-game" ng-if="itCtrl.beatGame">
+							<i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
+							<h3>Congrats you beat the last level! Your total score was: <span ng-bind="itCtrl.sk.score"></span></h3>
+						</div>
+					</div>
+
+					<div class="intervaltrainer-button">
+						<input ng-click="itCtrl.it.play(itCtrl.sk.level)" type="button" value="Play Interval" class="btn btn-sm btn-info btn-block">
+					</div>
+					<div class="intervaltrainer-top">
+						<div class="intervaltrainer-score">
+							<h3> Score: <strong><span ng-bind="itCtrl.sk.score"></span></h3></strong>
+						</div>
+						<div class="intervaltrainer-attempted">
+							<h3> Attempt: <strong><span ng-bind="itCtrl.sk.numAttempted"></span></h3></strong>
+						</div>
+						<div class="intervaltrainer-correct">
+							<h3> Correct: <strong><span ng-bind="itCtrl.sk.numCorrect"></span></h3></strong>
+						</div>
+					</h3>
+				</div>
+				<br />
+				<div class="piano" id="interval-trainer">
+					<ol class="scale-1">
+						<li ng-repeat="key in itCtrl.pianoKeys" ng-bind="key.interval" ng-class="key.class" 
+						ng-mousedown="itCtrl.k.playNote(itCtrl.it.frq1 + $index)" ng-mouseup="itCtrl.k.stopNote()" ng-click="itCtrl.checkAnswer($index, itCtrl.it); ctrl.update_user(itCtrl.sk.score)"></li>
+					</ol> 
+				</div>
+				<div class="intervaltrainer-lives">
+					<h3> Lives: <strong><span ng-bind="itCtrl.sk.numToFail -(itCtrl.sk.numAttempted-itCtrl.sk.numCorrect)"></span></h3></strong>
+				</div>
+			</div>
+		</div>
+	</div>
