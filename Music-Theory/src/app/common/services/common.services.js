@@ -40,28 +40,26 @@ angular.module('MyApp.Common')
 
 })
 
-.factory("Keyboard", function(frequencyList, $window, AudioContext) {
+.service("Volume", function () {
+	var self = this;
+	self.volume = 0.2;
+
+	self.set = function (v) {
+		self.volume = v;
+	}
+
+	self.get = function() {
+		return self.volume;
+	}
+})
+
+.factory("Keyboard", function(frequencyList, AudioContext, Volume) {
 	function Keyboard() {
 		this.myAudioContext  = AudioContext.get();
   		this.frequency = 440;
-  		this.volume = 1;
   		this.type = 'triangle';
   		this.oscillator = null;
-  		this.oscillator2 = null;
-  		this.oscillator3 = null;
-  		this.oscillator4 = null;
   		this.gainNode = null;
-  		this.gainNode2 = null;
-  		this.gainNode3 = null;
-  		this.gainNode4 = null;
-	}
-
-	Keyboard.prototype.setVolume = function(vol) {
-		this.volume = vol;
-	}
-
-	Keyboard.prototype.getVolume = function() {
-		return this.volume;
 	}
 
 	Keyboard.prototype.setWaveType = function(wave) {
@@ -88,89 +86,13 @@ angular.module('MyApp.Common')
 
 		this.oscillator.type = this.type;
 		this.oscillator.frequency.value = this.frequency;
-		this.gainNode.gain.value = this.volume;
+		this.gainNode.gain.value = Volume.get();
 
 		this.gainNode.connect(this.myAudioContext.destination);
 		this.oscillator.connect(this.gainNode);	
 
 		this.oscillator.start(this.myAudioContext.currentTime);
 		// this.oscillator.stop(this.myAudioContext.currentTime + .3);
-	}
-
-	Keyboard.prototype.playScale = function(scaleArray) {
-		for (var i = 0; i < scaleArray.length; i++) {
-			this.oscillator = this.myAudioContext.createOscillator();
-			this.gainNode = this.myAudioContext.createGain();
-			
-			this.gainNode.gain.value = .2;
-			this.oscillator.type = this.type;
-		 	this.oscillator.frequency.value = frequencyList[scaleArray[i]];
-		 	this.gainNode.connect(this.myAudioContext.destination);
-		 	this.oscillator.connect(this.gainNode);
-		 	this.oscillator.start(this.myAudioContext.currentTime+(i*.5));
-		 	this.oscillator.stop(this.myAudioContext.currentTime+(i*.5)+.5);
-		}
-	}
-
-	Keyboard.prototype.playScaleDescending = function(scaleArray) {
-		for (var i = scaleArray.length-1; i >= 0; i--) {
-			this.oscillator = this.myAudioContext.createOscillator();
-			this.gainNode = this.myAudioContext.createGain();
-			
-			this.gainNode.gain.value = this.volume;
-			this.oscillator.type = this.type;
-		 	this.oscillator.frequency.value = frequencyList[scaleArray[i]];
-		 	this.gainNode.connect(this.myAudioContext.destination);
-		 	this.oscillator.connect(this.gainNode);
-		 	this.oscillator.start(this.myAudioContext.currentTime+((scaleArray.length-1-i)*.5));
-		 	this.oscillator.stop(this.myAudioContext.currentTime+((scaleArray.length-1-i)*.5)+.5);
-		}
-	}
-
-	Keyboard.prototype.playInterval = function(frq1, frq2) {
-		this.oscillator = this.myAudioContext.createOscillator();
-		this.oscillator2 = this.myAudioContext.createOscillator();
-		this.oscillator3 = this.myAudioContext.createOscillator();
-		this.oscillator4 = this.myAudioContext.createOscillator();
-		this.gainNode = this.myAudioContext.createGain();
-		this.gainNode2 = this.myAudioContext.createGain();
-		this.gainNode3 = this.myAudioContext.createGain();
-		this.gainNode4 = this.myAudioContext.createGain();
-
-		this.oscillator.type = this.type;
-		this.oscillator2.type = this.type;
-		this.oscillator3.type = this.type;
-		this.oscillator4.type = this.type;
-		this.oscillator.frequency.value = frequencyList[frq1];
-		this.oscillator2.frequency.value = frequencyList[frq2];
-		this.oscillator3.frequency.value = frequencyList[frq1];
-		this.oscillator4.frequency.value = frequencyList[frq2];
-
-		this.gainNode.gain.value = this.volume;
-		this.gainNode2.gain.value = this.volume;
-		this.gainNode3.gain.value = this.volume;
-		this.gainNode4.gain.value = this.volume;
-
-		this.gainNode.connect(this.myAudioContext.destination);
-		this.oscillator.connect(this.gainNode);
-		this.gainNode2.connect(this.myAudioContext.destination);
-		this.oscillator2.connect(this.gainNode2);
-		this.gainNode3.connect(this.myAudioContext.destination);
-		this.oscillator3.connect(this.gainNode3);
-		this.gainNode4.connect(this.myAudioContext.destination);
-		this.oscillator4.connect(this.gainNode4);
-
-		this.oscillator.start(this.myAudioContext.currentTime);
-		this.oscillator.stop(this.myAudioContext.currentTime + 1);
-
-		this.oscillator2.start(this.myAudioContext.currentTime + 1);
-		this.oscillator2.stop(this.myAudioContext.currentTime + 2);
-
-		this.oscillator3.start(this.myAudioContext.currentTime + 2.1);
-		this.oscillator4.start(this.myAudioContext.currentTime + 2.1);
-
-		this.oscillator3.stop(this.myAudioContext.currentTime + 3.1);
-		this.oscillator4.stop(this.myAudioContext.currentTime + 3.1);
 	}
 
 	return Keyboard;

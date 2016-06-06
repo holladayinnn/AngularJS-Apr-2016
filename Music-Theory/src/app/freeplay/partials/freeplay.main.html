@@ -30,11 +30,7 @@
 		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
 	</ol> 
 </div>
-<div class="row volume">
-	<br />
-	<i class="fa volume-icon" ng-class="ctrl.volumeIcon" aria-hidden="true"></i>
-	<input class="slider" type="range" ng-model="ctrl.volumeLevel" ng-change="ctrl.changeVolume()" name="points" id="points" min="0" max="10">
-</div>
+<volumecontrol></volumecontrol>
 <div class="form-group row wave">
 	<div class="col-lg-4 col-md-4">
 	    <h3>Select Wave</h3>

@@ -36,7 +36,8 @@ angular.module('MyApp.Exercise')
 	return $resource('/api/update_User');
 })
 
-.factory('IntervalTrainer', function(AudioContext, frequencyList, directions, intervalDistances, itlevelDescription, $window) {
+.factory('IntervalTrainer', function(AudioContext, frequencyList, directions, intervalDistances, 
+						itlevelDescription, $window, Volume) {
 	function IntervalTrainer() {
 		this.myAudioContext  = AudioContext.get();
   		this.frq1 = 0;
@@ -98,8 +99,8 @@ angular.module('MyApp.Exercise')
 		this.oscillator.frequency.value = frequencyList[this.frq1];
 		this.oscillator2.frequency.value = frequencyList[this.frq2];
 
-		this.gainNode.gain.value = .2;
-		this.gainNode2.gain.value = .2;
+		this.gainNode.gain.value = Volume.get();
+		this.gainNode2.gain.value = Volume.get();
 
 		this.gainNode.connect(this.myAudioContext.destination);
 		this.oscillator.connect(this.gainNode);

@@ -1,6 +1,6 @@
 angular.module('MyApp.Lessons')
 
-.controller('LessonsController', function(STATES, Keyboard, PlayTime, volumeIcon, $timeout) {
+.controller('LessonsController', function(STATES, PlayExample, Keyboard, PlayTime, $timeout) {
 	var self = this;
 
 	self.navStates = STATES;
@@ -19,22 +19,15 @@ angular.module('MyApp.Lessons')
 		self.disableButtons = true;
 		if (type == "scaleAsc") {
 			self.enableButtons("scale", values.length);
-			self.k.playScale(values);
+			PlayExample.ScaleAscending(values);
 		}
 		else if (type == "scaleDesc") {
 			self.enableButtons("scale", values.length)
-			self.k.playScaleDescending(values);
+			PlayExample.ScaleDescending(values);
 		}
 		else {
 			self.enableButtons("k_interval", 0);
-			self.k.playInterval(values[0],values[1]);
+			PlayExample.Interval(values[0],values[1]);
 		}
-	};
-
-	self.volumeLevel = 2;
-	self.volumeIcon = volumeIcon[Math.round(self.volumeLevel/5)];
-	self.changeVolume = function() {
-		self.volumeIcon = volumeIcon[Math.round(self.volumeLevel/5)];
-		self.k.setVolume((self.volumeLevel) * 0.1);
 	};
 });
