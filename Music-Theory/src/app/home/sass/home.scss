@@ -1,0 +1,35 @@
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+
+.home-header {
+	background-image: url("home/img/tommy-guitar-final.jpg");
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	height:95vh;
+  	margin-top: 5vh
+}
+
+.home-title {
+	margin-top: 30vh;
+}
+
+.home-title h1, .home-title h5 {
+	font-family: 'Raleway', sans-serif;
+	color:#fff
+}
+
+.home-title h1 {
+	color: #bbffff;
+	font-size: 4em;
+}
+
+.home-title h5 {
+	font-size: 2em;
+}
+
+.home-description {
+	margin-top: 20px;
+	height: 90vh;
+}

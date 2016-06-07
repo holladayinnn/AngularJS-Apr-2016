@@ -1,19 +1,19 @@
 <div class="container">
-	<div>
-	<h1>Music Theory Exercises</h1>
+	<div class="page-top">
+		<h1>Music Theory Exercises</h1>
 	<br />
-	<volumecontrol></volumecontrol>
+	<ul class="list-inline">
+		<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kETIntervalState}}">Ear Training - Intervals</a></li>
+	</ul>
+	<hr>
 	<div class="form-group" ng-hide="ctrl._userAdded">
-	Username:
+	<strong>Username:</strong>
 		<input type="text" ng-model="ctrl._user.Username">
-		<button class="btn btn-primary" ng-click="ctrl.add_user()">Create</button>
+		<button class="btn btn-primary btn-sm" ng-click="ctrl.add_user()">Create</button>
 	</div>
 	<div ng-show="ctrl._userAdded">
 		<p>Username: <span ng-bind="ctrl._user.Username"></span></p>
 	</div>
-	  	<ul class="list-inline">
-			<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kETIntervalState}}">Ear Training - Intervals</a></li>
-		</ul>
 	</div>
 	 <div ui-view></div>
 </div>

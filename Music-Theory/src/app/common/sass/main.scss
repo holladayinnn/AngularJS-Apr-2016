@@ -1,11 +1,22 @@
+acme-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar-brand {
+  color: turquoise !important;
+  font-family: raleway !important;
+}
+
 p, h1, h2, h3, h4, h5, h6 {
   font-family: verdana, Geneva, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-// h1 {
-//   font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
-// }
+.page-top {
+  margin-top: 10vh;
+}
 
 h4 {
   text-decoration: underline;

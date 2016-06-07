@@ -1,4 +1,8 @@
 angular.module('MyApp.Lessons')
+.value("QuizQuesions", [{
+	q: "What are the 7 natural notes in western music?",
+	a: ["A, B, C, D, E, F, G", "A,B,C,D,E,F,G", "A B C D E F G"]
+}])
 
 .service("PlayExample", function (AudioContext, Volume, frequencyList) {
 	var self = this;

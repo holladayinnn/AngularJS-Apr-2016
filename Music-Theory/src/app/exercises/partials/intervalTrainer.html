@@ -4,14 +4,14 @@
 			<div class="instructions col-md-12">
 				<h1>Relative Pitch Interval Ear Training Game</h1>
 				<h3>Instructions on how to play: </h3>
-				<p>Two notes will be played either ascending, descending, or simultaneously.  You can click the "Play Interval" button to hear the two notes as many times as you want.</p>
-				<p>Your task is to identify what the interval is between the two notes.</p>
-				<p>Each piano key represents a different interval, i.e. the low C would represent a unison interval and the adjacent D would represent a major 2nd interval. If you select the right piano key, your score will increase.  If you select the wrong piano key, you will lose a life.  Either way you will progress to the next question once you answered.</p>
-				<p>The piano keys in this game <strong>do not</strong>  represent the actual notes being played.  The idea is to identify the pitches relative to each other, not the actual notes.</p>
-				<p>You have <strong><span ng-bind="itCtrl.sk.numToFail"></span></strong> lives.  If you lose all of your lives you will have to start over!!</p> 
+				<p>Click the "Play Interval" button to hear two notes that will be played either ascending, descending, or simultaneously.</p>
+				<p><strong>Your task is to identify what the interval is between the two notes</strong>.</p>
+				<p>Each piano key represents a different interval, i.e. the low C would represent a unison interval and the adjacent D would represent a major 2nd interval. If you select the right piano key, your score will increase.  If you select the wrong piano key, you will lose a life.  Either way you will progress to the next question after answering.</p>
+				<p>The piano keys in this game <strong>do not</strong> represent the actual notes being played.  The idea is to identify the pitches relative to each other, not the actual notes.</p>
+				<p>You have <strong><span ng-bind="itCtrl.sk.numToFail"></span></strong> lives.  If you lose all of your lives you will have to start over.</p> 
 				<p>After <strong><span ng-bind="itCtrl.sk.numToPass"></span></strong> questions, if you do not lose your lives you will go the next level!</p>
 				<p>As the level changes, different intervals will be played (look on the left of the piano to see which ones).  The higher level, the higher the score you get per question.</p>
-				<p>You are also welcome to select any level you want to start at, but your score will reset to 0, and you will not be able to get as high of a score as if you started at the beginning.</p>
+				<p>You are also welcome to select any level you want, but your score will reset to 0, and you will not be able to get as high of a score as if you started the game from the beginning.</p>
 				<p>If you get one of the top ten scores and save a username on the top of the page you will be added to the leaderboard page.</p>
 				<p>Have fun!</p>
 
@@ -80,6 +80,7 @@
 					<h3> Questions remaining: <strong><span ng-bind="itCtrl.sk.numToPass -(itCtrl.sk.numAttempted%itCtrl.sk.numToPass)"></span></h3></strong>
 					<h3> Lives: <strong><span ng-bind="itCtrl.sk.numToFail -(itCtrl.sk.numAttempted-itCtrl.sk.numCorrect)"></span></h3></strong>
 				</div>
+				<volumecontrol></volumecontrol>
 			</div>
 		</div>
 	</div>
