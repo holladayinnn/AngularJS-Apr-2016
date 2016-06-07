@@ -1,6 +1,33 @@
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:500);
 
+a.btn-circle {
+    color: white;
+}
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 100%!important;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+a.btn-circle:hover {
+    color: white;
+}
+.btn-circle:hover, .btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
 .home-header {
 	background-image: url("home/img/tommy-guitar-final.jpg");
 	-webkit-background-size: cover;
@@ -32,4 +59,19 @@
 .home-description {
 	margin-top: 20px;
 	height: 90vh;
+}
+
+.feedback-description {
+	margin-top: 20px;
+	height: 95vh;
+	background-color: #333;
+}
+
+.feedback-description h1 {
+	color: goldenrod;
+}
+
+.home-description h1, .feedback-description h1{
+	font-family: 'Raleway', sans-serif;
+
 }

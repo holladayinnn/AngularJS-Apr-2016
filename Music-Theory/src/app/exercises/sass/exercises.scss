@@ -38,11 +38,13 @@
 .intervaltrainer {
 	display: inline-block;
 	width: 90%;
+	padding: 20px;
+	border: 2px solid #5bc0de;
+	border-radius: 1%;
 	//background-color: #eff;
 }
 
 .intervaltrainer-header h3{
-	margin-top: 10px;
 	display:inline-block;
 }
 
@@ -55,12 +57,6 @@
 	width: 33%;
 	float: left;
 } 
-
-.intervaltrainer {
-	padding: 20px;
-	border: 2px solid #5bc0de;
-	border-radius: 1%;
-}
 
 .level-up {
 	color: green;

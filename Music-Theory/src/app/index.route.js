@@ -30,11 +30,6 @@
       templateUrl: 'app/exercises/partials/exercises.main.html',
       controller: 'ExerciseController as ctrl'
     })
-    .state(STATES.kLeaderboardState, {
-      url: '/leaderboard',
-      templateUrl: 'app/leaderboard/partials/leaderboard.main.html',
-      controller: 'LeaderboardController as ctrl'
-    })
     .state(STATES.kAuthState, {
       url: '/auth',
       templateUrl: 'app/auth/partials/auth.main.html',
@@ -83,6 +78,11 @@
       url:'/eartraining-intervals',
       templateUrl: 'app/exercises/partials/intervals.html',
       controller: 'IntervalTrainerController as itCtrl'
+    })
+    .state(STATES.kLeaderboardState, {
+      url: '/leaderboard',
+      templateUrl: 'app/exercises/partials/leaderboard.html',
+      controller: 'LeaderboardController as ctrl'
     })
 
     //Auth child-states
