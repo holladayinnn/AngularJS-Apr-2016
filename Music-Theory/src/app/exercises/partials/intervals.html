@@ -4,19 +4,26 @@
 
 	<div class="row" ng-hide="itCtrl.startGame">
 		<div class="instructions col-md-12">
-			<h1>Relative Pitch Interval Ear Training Game</h1>
-			<h3>Instructions on how to play: </h3>
-			<p>Click the "Play Interval" button to hear two notes that will be played either ascending, descending, or simultaneously.</p>
-			<p><strong>Your task is to identify what the interval is between the two notes</strong>.</p>
-			<p>Each piano key represents a different interval, i.e. the low C would represent a unison interval and the adjacent D would represent a major 2nd interval. If you select the right piano key, your score will increase.  If you select the wrong piano key, you will lose a life.  Either way you will progress to the next question after answering.</p>
-			<p>The piano keys in this game <strong>do not</strong> represent the actual notes being played.  The idea is to identify how the pitches relate to each other, not the actual notes.</p>
-			<p>You have <strong><span ng-bind="itCtrl.sk.numToFail"></span></strong> lives.  If you lose all of your lives you will have to start over.</p> 
-			<p>After <strong><span ng-bind="itCtrl.sk.numToPass"></span></strong> questions, if you do not lose your lives you will go the next level!</p>
-			<p>As the level changes, different intervals will be played (look on the left of the piano to see which ones).  The higher level, the higher the score you get per question.</p>
-			<p>You are also welcome to select any level you want, but your score will reset to 0, and you will not be able to get as high of a score as if you started the game from the beginning.</p>
-			<p>If you get one of the top ten scores and save a username on the top of the page you will be added to the leaderboard page.</p>
-			<p>Have fun!</p>
-
+			<h3>
+				Interval Ear Training Game Instructions
+			</h3>
+			<p>
+				Click the "Play Interval" button to hear two notes that will be played either ascending, descending, or simultaneously. <strong>Your task is to identify what the interval is between the two notes</strong>.
+			</p>
+			<p>
+				The piano keys in this game <strong>do not</strong> represent the actual notes being played.  The idea is to identify how the pitches relate to each other, not the actual notes.
+			</p>
+			<p>
+				Each piano key represents a different interval, i.e. the low C would represent a unison interval and the adjacent D would represent a major 2nd interval. If you select the right piano key, your score will increase.  If you select the wrong piano key, you will lose a life.  Either way you will progress to the next question after answering.  As the level changes, different intervals will be played.  The higher level, the higher the score you get per question.
+			</p>
+			<p>
+				You have <strong><span ng-bind="itCtrl.sk.numToFail"></span></strong> lives.  If you lose all of your lives you will have to start over.  After <strong><span ng-bind="itCtrl.sk.numToPass"></span></strong> questions, if you do not lose your lives you will go the next level!
+			</p>
+			<p>
+				You are welcome to select any level you want, but your score will reset to 0, and you will not be able to get as high of a score as if you started the game from the beginning.</p>
+			<p>
+				If you get one of the top ten scores and save a username on the top of the page you will be added to the leaderboard page!
+			</p>
 			<button class="btn btn-sm btn-info btn-block" type="button" ng-click="itCtrl.startGame = true">Play Game!</button>
 		</div>
 	</div>
@@ -24,61 +31,58 @@
 
 	<div ng-show="itCtrl.startGame" class="row">
 		<div class="levels col-md-3">
-		<h4> Level <span ng-bind="itCtrl.level"></span> </h4>
-		<strong><p ng-bind="itCtrl.itlevels[itCtrl.level].description"></p></strong>
 			<ul class="list-group">
 				<button class="list-group-item" type="button" ng-repeat="level in itCtrl.itlevels" ng-click="itCtrl.resetLevel(level.num)">Level <span ng-bind="level.num"></span></button>
 			</ul>
-			<button class="btn btn-sm btn-info" type="button" ng-click="itCtrl.startGame = false">Review Instructions</button>
+			<button class="btn btn-secondary btn-sm" type="button" ng-click="itCtrl.startGame = false">Review Instructions</button>
 		</div>
 
 		<div class="col-md-9">
 			<div class="intervaltrainer-details">
-				<div class="intervaltrainer-header">
-					<h1>Relative Pitch Interval Ear Training</h1>
-				</div>
-				<br />
 				<div class="animated-text">
 					<div class="animate-show level-up" ng-show="itCtrl.levelUp">
-						<h3>Level <span ng-bind="itCtrl.level"></span>! 
-						<span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
+						<h4>Level Up!</h4><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i>
 					</div>
 					<div class="animate-show start-over" ng-show="itCtrl.startOver">
-						<h3>You lost your 
-						<span ng-bind="itCtrl.sk.numToFail"></span> lives! Score back to 0!</h3> <i class="fa fa-frown-o fa-2x" aria-hidden="true"></i>
+						<h4>You lost your 
+						<span ng-bind="itCtrl.sk.numToFail"></span> lives! Score back to 0!</h4> <i class="fa fa-frown-o fa-lg" aria-hidden="true"></i>
 					</div>
 					<div class="animate-show beat-game" ng-show="itCtrl.beatGame">
 						<i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
-						<h3>Congrats you beat the last level! Your total score was: <span ng-bind="itCtrl.sk.score"></span></h3>
+						<h4>Congrats you beat the last level! Your total score was: <span ng-bind="itCtrl.sk.score"></span></h4>
 					</div>
 				</div>
 
+				<div class="intervaltrainer-header">
+					<h3>Level <span ng-bind="itCtrl.level"></span>: <span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
+				</div>
 				<div class="intervaltrainer-button">
 					<button ng-click="itCtrl.it.play(itCtrl.sk.level)" type="button" class="btn btn-sm btn-info btn-block">Play Interval</button>
 				</div>
 
 				<div class="intervaltrainer-top">
 					<div class="intervaltrainer-score">
-						<h3> Score: <strong><span ng-bind="itCtrl.sk.score"></span></h3></strong>
+						<h4> Score: <strong><span ng-bind="itCtrl.sk.score"></span></h4></strong>
 					</div>
 					<div class="intervaltrainer-attempted">
-						<h3> Attempt: <strong><span ng-bind="itCtrl.sk.numAttempted"></span></h3></strong>
+						<h4> Attempt: <strong><span ng-bind="itCtrl.sk.numAttempted"></span></h4></strong>
 					</div>
 					<div class="intervaltrainer-correct">
-						<h3> Correct: <strong><span ng-bind="itCtrl.sk.numCorrect"></span></h3></strong>
+						<h4> Correct: <strong><span ng-bind="itCtrl.sk.numCorrect"></span></h4></strong>
 					</div>
-				</h3>
-			</div>
+				</div>
 			<br />
-			<div class="piano" id="interval-trainer">
+			<div class="piano" id="interval-trainer-piano">
 				<ol class="scale-1">
 					<li ng-repeat="key in itCtrl.pianoKeys" ng-bind="key.interval" ng-class="key.class" 
 						ng-mousedown="itCtrl.k.playNote(itCtrl.it.frq1 + $index)" ng-mouseup="itCtrl.k.stopNote()" ng-click="itCtrl.checkAnswer($index, itCtrl.it); ctrl.update_user(itCtrl.sk.score)"></li>
 				</ol> 
 			</div>
 			<div class="intervaltrainer-lives">
-				<h3> Questions remaining: <strong><span ng-bind="itCtrl.sk.numToPass -(itCtrl.sk.numAttempted%itCtrl.sk.numToPass)"></span></h3></strong>
-				<h3> Lives: <strong><span ng-bind="itCtrl.sk.numToFail -(itCtrl.sk.numAttempted-itCtrl.sk.numCorrect)"></span></h3></strong>
+				<h4> 
+					Questions remaining: <strong><span ng-bind="itCtrl.sk.numToPass -(itCtrl.sk.numAttempted%itCtrl.sk.numToPass)"></span></strong>
+					Lives: <strong><span ng-bind="itCtrl.sk.numToFail -(itCtrl.sk.numAttempted-itCtrl.sk.numCorrect)"></span></strong>
+				</h4>
 			</div>
 			<volumecontrol></volumecontrol>
 		</div>
