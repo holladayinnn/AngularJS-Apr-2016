@@ -12,7 +12,7 @@
 	    'MyApp.Freeplay',
 	    'MyApp.Lessons',
 	    'MyApp.Exercise',
-	    'MyApp.Leaderboard'
+	    'MyApp.Contact'
 	]);
 
 })();

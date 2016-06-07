@@ -30,6 +30,11 @@
       templateUrl: 'app/exercises/partials/exercises.main.html',
       controller: 'ExerciseController as ctrl'
     })
+    .state(STATES.kContactState, {
+      url: '/contact',
+      templateUrl: 'app/contact/partials/contact.main.html',
+      controller: 'ContactController as ctrl'
+    })
     .state(STATES.kAuthState, {
       url: '/auth',
       templateUrl: 'app/auth/partials/auth.main.html',
@@ -82,7 +87,21 @@
     .state(STATES.kLeaderboardState, {
       url: '/leaderboard',
       templateUrl: 'app/exercises/partials/leaderboard.html',
-      controller: 'LeaderboardController as ctrl'
+      controller: 'LeaderboardController as lCtrl'
+    })
+
+    .state(STATES.kContactLessonState, {
+      url:'/lessons',
+      templateUrl: 'app/contact/partials/contact.lessons.html'
+    })
+    .state(STATES.kFeedbackState, {
+      url:'/feedback',
+      templateUrl: 'app/contact/partials/contact.feedback.html',
+      controller: 'FeedbackController as fbCtrl'
+    })
+    .state(STATES.kDonateState, {
+      url: '/donate',
+      templateUrl: 'app/contact/partials/contact.donate.html'
     })
 
     //Auth child-states

@@ -9,6 +9,7 @@
         kFreeplayState: 'freeplay',
     	kLessonState: 'lessons',
     	kExerciseState: 'exercises',
+        kContactState: 'contact',
         kAuthState: 'auth',
 
     	// Lesson child states
@@ -23,6 +24,11 @@
         //Exercise Child States
         kETIntervalState: 'exercises.interval',
         kLeaderboardState: 'exercises.leader',
+
+        //Contact Child States
+        kContactLessonState: 'contact.lessons',
+        kFeedbackState: 'contact.feedback',
+        kDonateState: 'contact.donate',
 
         //Auth Child States
         kLoginState: 'auth.login',

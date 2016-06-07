@@ -9,7 +9,7 @@
 			<p>Click the "Play Interval" button to hear two notes that will be played either ascending, descending, or simultaneously.</p>
 			<p><strong>Your task is to identify what the interval is between the two notes</strong>.</p>
 			<p>Each piano key represents a different interval, i.e. the low C would represent a unison interval and the adjacent D would represent a major 2nd interval. If you select the right piano key, your score will increase.  If you select the wrong piano key, you will lose a life.  Either way you will progress to the next question after answering.</p>
-			<p>The piano keys in this game <strong>do not</strong> represent the actual notes being played.  The idea isto identify the pitches relative to each other, not the actual notes.</p>
+			<p>The piano keys in this game <strong>do not</strong> represent the actual notes being played.  The idea is to identify how the pitches relate to each other, not the actual notes.</p>
 			<p>You have <strong><span ng-bind="itCtrl.sk.numToFail"></span></strong> lives.  If you lose all of your lives you will have to start over.</p> 
 			<p>After <strong><span ng-bind="itCtrl.sk.numToPass"></span></strong> questions, if you do not lose your lives you will go the next level!</p>
 			<p>As the level changes, different intervals will be played (look on the left of the piano to see which ones).  The higher level, the higher the score you get per question.</p>
@@ -44,8 +44,6 @@
 						<span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
 					</div>
 					<div class="animate-show start-over" ng-show="itCtrl.startOver">
-						<h3> Answer was <span ng-bind="itCtrl.pianoKeys[itCtrl.it.frq2-itCtrl.it.frq1].interval"></span</h3>
-						<br />
 						<h3>You lost your 
 						<span ng-bind="itCtrl.sk.numToFail"></span> lives! Score back to 0!</h3> <i class="fa fa-frown-o fa-2x" aria-hidden="true"></i>
 					</div>

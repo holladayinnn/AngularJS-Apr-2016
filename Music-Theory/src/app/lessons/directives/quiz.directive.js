@@ -11,7 +11,7 @@
     	}
     })
 
-    .controller('QuizController', function(QuizQuestions) {
+    .controller('QuizController', function() {
         var self = this;
 
         

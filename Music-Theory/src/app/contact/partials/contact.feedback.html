@@ -1,0 +1,48 @@
+<div class="row"> 
+	<div class="col-lg-12 col-md-12 contact-header">
+	  	<h3>Give your Feedback!</h3>
+	  </div>
+</div>
+<br />
+<div class="container">	
+	<div class="row"> 
+		<div class="col-lg-6 col-md-6">
+			<form name="fbCtrl.feedbackForm" ng-submit="fbCtrl.submitFeedback()">
+				<div class="row">
+				`	<label class="required">Name: </label>
+					<input type="text" placeholder="Your Name" class="form-control" ng-model="fbCtrl.name" required>
+				</div>
+				<br />
+				<div class="row">
+					<label class="required">Email: </label>
+					<input type="email" placeholder="yourEmail@email.com" class="form-control" ng-model="fbCtrl.email" ng-pattern="ctrl.emailExp" required>
+				</div>
+				<br />
+				<div class="row">
+					<p><label>Please rate this web app </label> <i class="fa fa-lg" ng-class="fbCtrl.iconClass" aria-hidden="true"></i></p>
+					<div class="rating" ng-class="fbCtrl.ratingClass">
+						<span ng-click="fbCtrl.setRating(5)" class="five">☆</span>
+						<span ng-click="fbCtrl.setRating(4)" class="four">☆</span>
+						<span ng-click="fbCtrl.setRating(3)" class="three">☆</span>
+						<span ng-click="fbCtrl.setRating(2)" class="two">☆</span>
+						<span ng-click="fbCtrl.setRating(1)" class="one">☆</span>
+				
+					</div>
+				</div>
+				<br />
+				<div class="form-group row">
+					<p><label class="required">What do you like about this web app?</label></p>
+					<textarea class="form-control" rows="5" ng-model="fbCtrl.positiveFeedback" ng-required="ctrl.feedbackRequired" ng-change="fbCtrl.setFeedbackRequired()" placeholder="What do you like?"></textarea>
+				</div>
+				<div class="form-group row">
+					<p><label class="required">What do you think could be improved?</label></p>
+					<textarea class="form-control" rows="5" ng-model="fbCtrl.improvementFeedback" ng-required="fbCtrl.feedbackRequired" ng-change="fbCtrl.setFeedbackRequired()" placeholder="What could be better?"></textarea>
+				</div>
+				<div class="row">
+					<button type="submit" class="btn btn-primary" ng-disabled="fbCtrl.feedbackForm.$invalid" ng-model="fbCtrl.improvementFeedback">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<br />
