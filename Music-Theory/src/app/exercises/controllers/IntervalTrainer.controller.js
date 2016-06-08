@@ -15,7 +15,7 @@ angular.module('MyApp.Exercise')
         self.levelUp = false;
         self.startOver = false;
         self.beatGame = false;
-        Volume.set(.2); 	   
+        // Volume.set(.2); 	   
 
         self.checkAnswer = function(answer) {
             self.levelUp = false;

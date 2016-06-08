@@ -1,11 +1,9 @@
 <div class="row"> 
-	<div class="col-lg-12 col-md-12">
-	  	<h4>Whole Steps and Half Steps</h4>
-	  </div>
-</div>
-	
-<div class="row"> 
-	<div class="col-lg-8 col-md-8">
+	<div class="col-lg-1 col-md-1"></div>
+	<div class="col-lg-10 col-md-10">
+		<div class="lesson-header">
+			<h4>Whole Steps and Half Steps</h4>
+		</div>
 		<p>
 			Now that you know the names of the notes, you need to understand how to relate the notes to each other.
 		</p>
@@ -27,24 +25,25 @@
 		<p>
 			<strong>Also Note: </strong> Notes with the same name can actually have different frequencies.  The two C's on the piano below are both called C, but one sounds higher than the other.  The C that is higher is actually exactly double the frequency of the C that is lower.  The relationship between these two C's is called an <strong>octave</strong>.
 		</p>
+		<div class="piano">
+			<ol class="scale-1">
+				<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+				<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+				<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+				<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+				<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+				<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+				<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+				<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+				<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+				<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+				<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+				<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+				<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
+			</ol> 
+		</div>
+		<volumecontrol></volumecontrol>
+		<quiz></quiz>
 	</div>
-</div>
-
-<div class="piano">
-	<ol class="scale-1">
-		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
-		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
-		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
-		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
-		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
-		<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
-		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
-		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
-		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
-		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
-		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
-		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
-		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
-	</ol> 
 </div>
 <br />

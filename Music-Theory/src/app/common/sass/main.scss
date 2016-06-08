@@ -4,6 +4,25 @@ acme-navbar {
     z-index: 10;
 }
 
+.nav-center {  
+  text-align: center;
+  ul.nav {
+    display: inline-block;
+    li {
+      display: inline
+      a {
+        float: left
+      }
+    }
+  }
+}
+
+// div.navbar-header {
+//   margin-left: 36px !important;
+//   padding-left: 12px !important;
+//   padding-right: 12px !important;
+// }
+
 .navbar-brand {
   color: turquoise !important;
   font-family: raleway !important;
@@ -14,8 +33,22 @@ p, h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
 }
 
+.btn-secondary {
+    color: #373a3c;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-secondary:hover {
+    color: #373a3c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
 .page-top {
-  margin-top: 70px;
+  margin-top: 50px;
+  padding-top: 20px;
+  // text-align: center;
 }
 
 .page-top h1 {
@@ -33,18 +66,22 @@ p {
     line-height: 1.7;
 }
 
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus{
+  background-color: #5bc0de;
+}
+
 a.page-link {
   color: #789;
-  font-size: 1.2em;
+  font-size: 1em;
   padding-right: 18px;
 }
 
 a.page-link:hover {
   text-decoration: underline;
-}
-
-.wave {
- padding-left:4px;
 }
 
 .volume-icon {

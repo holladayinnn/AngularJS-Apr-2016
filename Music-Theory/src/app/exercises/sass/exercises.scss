@@ -1,32 +1,40 @@
 #interval-trainer-piano > ol > li {
   font-size: 0.8rem;
-  width: 50px;
+  width: 45px;
 }
 
 #interval-trainer-piano > ol > li.ebony {
 	// color: gainsboro;
-	width: 40px;
+	width: 38px;
 }
 
 #interval-trainer-piano li:hover {
-    color: #5bc0de;
+    // color: #5bc0de;
+    color: goldenrod;
     font-family: raleway;
     font-weight: 700;
 }
 
-.intervaltrainer h4 {
+.intervaltrainer-top h4, .intervaltrainer-questions h4, .intervaltrainer-lives h4 {
 	text-decoration: none;
 }
 
 .instructions h3 {
 	margin-top: 0px;
 	margin-bottom: 20px;
+	font-family: raleway;
+}
+
+
+.intervaltrainer-container {
+	text-align:center;
 }
 
 .intervaltrainer {
 	display: inline-block;
-	width: 90%;
 	padding: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
 	border: 2px solid #5bc0de;
 	border-radius: 1%;
 	//background-color: #eff;
@@ -46,29 +54,31 @@
 	display: inline-block;
 }
 
+// .intervaltrainer-volume div{
+// 	margin-left: 15%;
+// }
+
 .levels .list-group-item {
 	padding: 6px 14px;
 }
 
 .levels button.list-group-item {
-	font-size: 12px;
+	font-size: 14px;
 }
 
-.btn-secondary {
-    color: #373a3c;
-    background-color: #fff;
-    border-color: #ccc;
-}
-
-.btn-secondary:hover {
-    color: #373a3c;
-    background-color: #e6e6e6;
-    border-color: #adadad;
+.instructions-button {
+	margin-bottom: 10px;
 }
 
 .intervaltrainer-score, .intervaltrainer-correct, .intervaltrainer-attempted {
 	text-align: center;
 	width: 33%;
+	float: left;
+} 
+
+.intervaltrainer-lives, .intervaltrainer-questions {
+	width: 50%;
+	text-align: center;
 	float: left;
 } 
 

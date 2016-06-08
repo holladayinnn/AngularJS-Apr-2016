@@ -1,13 +1,13 @@
 angular.module('MyApp.Contact')
 
-.controller('FeedbackController', function(ratingClasses, iconClasses) {
+.controller('FeedbackController', function(ratingClasses, iconClasses, ngAudio) {
 	var self = this;
 	
 	self.rating = 0;
 	self.ratingClass = ratingClasses[self.rating];
 	self.iconClass = "";
 	self.feedbackRequired = true;
-
+	self.formSubmitted = false;
 	self.emailExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	self.setRating = function (rating) {
@@ -27,9 +27,7 @@ angular.module('MyApp.Contact')
 
 	self.submitFeedback = function() {
     	if (self.feedbackForm.$valid) {
-    		// submit the form
-    	} else {
-    		// alert phone is not submitted
+    		self.formSubmitted = true;
     	}
     };
 

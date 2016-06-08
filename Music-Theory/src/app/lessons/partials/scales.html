@@ -1,11 +1,9 @@
 <div class="row"> 
-	<div class="col-lg-12 col-md-12">
-	  	<h4>Scales</h4>
-	  </div>
-</div>
-	
-<div class="row"> 
-	<div class="col-lg-8 col-md-8">
+	<div class="col-lg-1 col-md-1"></div>
+	<div class="col-lg-10 col-md-10">
+		<div class="lesson-header">
+			<h4>Scales</h4>
+		</div>
 		<p>
 			A <strong>scale</strong> is a set of notes, usually spanning one octave.  Scales are also typically the same set of notes ascending and descending, but they could be written differently depending on which direction you are going.  
 		</p>
@@ -32,24 +30,25 @@
 			<input ng-disabled="ctrl.disableButtons" ng-click="ctrl.playExample('scaleAsc', [12,14,16,18,20,22,24])" type="button" value="Play Whole-tone Ascending" class="btn btn-primary">
 			<input ng-disabled="ctrl.disableButtons" ng-click="ctrl.playExample('scaleDesc', [12,14,16,18,20,22,24])" type="button" value="Play Whole-tone Descending" class="btn btn-primary">
 		</p>
+		<div class="piano">
+			<ol class="scale-1">
+				<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+				<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+				<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+				<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+				<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+				<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+				<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+				<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+				<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+				<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+				<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+				<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+				<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
+			</ol> 
+		</div>
+		<volumecontrol></volumecontrol>
+		<quiz></quiz>
 	</div>
-</div>
-
-<div class="piano">
-	<ol class="scale-1">
-		<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
-		<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
-		<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
-		<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
-		<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
-		<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
-		<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
-		<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
-		<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
-		<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
-		<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
-		<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
-		<li ng-mousedown="ctrl.k.playNote(24)" ng-mouseup="ctrl.k.stopNote()">C</li> 
-	</ol> 
 </div>
 <br />
