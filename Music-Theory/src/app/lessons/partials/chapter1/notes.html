@@ -1,0 +1,41 @@
+<div class="row"> 
+	<div class="tommy-container col-md-10 col-md-offset-1">
+		<div class="lesson-header">
+			<br />
+			<h4>The Notes</h4>
+		</div>
+		<p>A <strong>note</strong> represents a pitch, or a certain frequency.</p>
+		<p>
+			In Western Music, we base the names of the notes on the first <strong>7</strong> letters of the alphabet: 
+			<strong> A, B, C, D, E, F, G.</strong> 
+		</p>
+		<p>
+			In addition to these 7 notes (which are called the natural notes), we have <strong>5</strong> notes in between.  These notes in between are called the <strong>sharps</strong> and <strong>flats</strong>.  Each of these notes has two names.  For example, the note in between C and D can be called either C-sharp (notated C#) or D-flat (notated Db).
+		</p>
+		<p>
+			Therefore, all together we have a total of <strong>12</strong> notes.  If we look at the piano below, we can see all 12 notes: 7 white notes (the natural notes) and 5 black notes (the sharps and flats).
+		</p>
+		<p> 
+			<strong>Note: </strong>On the piano, it is common to use C as the reference point instead of A, so the first note on this piano is C.  After G, the next natural note is A.  Also notice that as you click the piano keys from left to right, the pitch gets higher.
+		</p>
+		<div class="piano">
+			<ol class="scale-1">
+				<li ng-mousedown="ctrl.k.playNote(12)" ng-mouseup="ctrl.k.stopNote()">C</li>
+				<li ng-mousedown="ctrl.k.playNote(13)" ng-mouseup="ctrl.k.stopNote()" class="ebony">C# D♭</li>
+				<li ng-mousedown="ctrl.k.playNote(14)" ng-mouseup="ctrl.k.stopNote()">D</li>
+				<li ng-mousedown="ctrl.k.playNote(15)" ng-mouseup="ctrl.k.stopNote()" class="ebony">D# E♭</li>
+				<li ng-mousedown="ctrl.k.playNote(16)" ng-mouseup="ctrl.k.stopNote()">E</li>
+				<li ng-mousedown="ctrl.k.playNote(17)" ng-mouseup="ctrl.k.stopNote()">F</li>
+				<li ng-mousedown="ctrl.k.playNote(18)" ng-mouseup="ctrl.k.stopNote()" class="ebony">F# G♭</li>
+				<li ng-mousedown="ctrl.k.playNote(19)" ng-mouseup="ctrl.k.stopNote()">G</li>
+				<li ng-mousedown="ctrl.k.playNote(20)" ng-mouseup="ctrl.k.stopNote()" class="ebony">G# A♭</li>
+				<li ng-mousedown="ctrl.k.playNote(21)" ng-mouseup="ctrl.k.stopNote()">A</li>
+				<li ng-mousedown="ctrl.k.playNote(22)" ng-mouseup="ctrl.k.stopNote()" class="ebony">A# B♭</li>
+				<li ng-mousedown="ctrl.k.playNote(23)" ng-mouseup="ctrl.k.stopNote()">B</li>
+			</ol> 
+		</div>
+		<volumecontrol></volumecontrol>
+		<quiz questions="notesCtrl.questions" link="ctrl.navStates.kStepState"></quiz>
+	</div>
+</div>
+<br />

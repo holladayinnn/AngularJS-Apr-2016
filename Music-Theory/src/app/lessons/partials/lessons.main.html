@@ -1,26 +1,49 @@
+<div class="container-fluid"></div>
+
 <div class="container">
 	<div class="page-top">
 		<div class="row">
-			<div class="col-md-1 col-lg-1"></div>
-			<div class="col-md-10 col-lg-10">
+<!-- 			<div class="col-md-1 col-lg-1"></div>
+ -->			<div class="col-md-10 col-md-offset-1">
+				<glossary></glossary>
 				<div class="text-center">
 					<h1>Music Theory Lessons</h1>
 				</div>
 				<br />
 				<div class="nav-center">
-					<ul class="nav nav-tabs nav-justified">
-						<li class="active"><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kNoteState}}">Notes</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kStepState}}">Steps</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kIntervalState}}">Intervals</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kScaleState}}">Scales</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kMajorScaleState}}">Major Scale</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kDiatonicIntervalState}}">Diatonic Intervals</a></li>
+					<ul class="nav nav-pills nav-justified">
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kNoteState}}">
+								Notes
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kStepState}}">
+								Steps
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kIntervalState}}">Intervals</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kScaleState}}">
+								Scales
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kMajorScaleState}}">
+								Major Scale
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kDiatonicIntervalState}}">	Diatonic Intervals
+							</a>
+						</li>
 						<!-- <li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kChromaticIntervalState}}">Chromatic Intervals</a></li> -->
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-	<br>
 	<div ui-view></div>
 </div>

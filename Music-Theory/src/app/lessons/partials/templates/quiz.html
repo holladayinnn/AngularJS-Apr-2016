@@ -1,0 +1,42 @@
+<hr>
+<div class="quiz">
+	<h3>Check Your Understanding</h3>
+	<div class="row" ng-repeat="q in qCtrl.questions">
+		<br />
+		<div class="col-md-8 col-lg-8">
+			<div class="question">
+				<h4>{{$index+1}}. <span ng-bind="q.question"></span></h4>
+			</div>
+			<div ng-if="q.type=='input'" class="answer underline">
+				<input type="text" ng-model="q.userAnswer" style="float:left">
+				<!-- <div class="button-container">
+					<div class='button -blue center' ng-click="qCtrl.checkAnswer(q)">Check</div>
+				</div> -->
+				<input ng-click="qCtrl.checkAnswer(q)" type="button" value="Check" class="btn btn-tommy">
+			</div>
+			<div ng-if="q.type=='radio'" class="answer">
+			<br />
+				<div ng-repeat="p in q.possibleAnswers" class="user-answer radio-inline">
+					<!-- <input type="radio" ng-model="q.userAnswer" ng-click="qCtrl.checkAnswer(q)" ng-value="p"><label ng-bind="p">
+					</label> -->
+					<label class="control control--radio"><span ng-bind="p"></span>
+				    	<input type="radio" name="radio" ng-value="p" ng-model="q.userAnswer" ng-click="qCtrl.checkAnswer(q)">
+				     	<div class="control__indicator"></div>
+				    </label>
+				</div>
+			</div>
+		</div>
+		<div class="feedback col-md-4 col-lg-4"> 
+			<div class="" ng-show="q.correct==false" style="color:red"><h4>Try again! <br /><span ng-bind="q.feedback"></span></h4></div>
+			<div ng-show="q.correct==true" style="color:green"><h4><i class="fa fa-check" aria-hidden="true"></i>Correct!</h4></div>
+		</div>
+	</div>
+	<br />
+	<div ng-show="qCtrl.allCorrect == true">
+		<div class="button-container">
+			<!-- <button class='btn btn-tommy' ng-click="qCtrl.scrollToTop()" ui-sref="{{qCtrl.link}}" ng-audio="app/common/sounds/nextLesson.mp3" volume="0.1">Go to Next lesson -></button> -->
+			<button class='btn btn-tommy' ng-click="qCtrl.scrollToTop()" ui-sref="{{qCtrl.link}}">Go to Next lesson -></button>
+		</div>
+	</div>
+	<br />
+</div>

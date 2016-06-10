@@ -1,18 +1,17 @@
-<br />
-<div class="row">
-	<div class="col-lg-1 col-md-1"></div>
-	<div class="col-lg-10 col-md-10">
+<div class="row" ng-hide="fbCtrl.formSubmitted">
+	<div class="col-md-10 col-md-offset-1 tommy-container">
 		<div class="feedback-header">
+			<br />
 			<h4>Send Me Your Feedback!</h4>
 		</div>
 		<br />
 		<form name="fbCtrl.feedbackForm" ng-submit="fbCtrl.submitFeedback()">
-			<div>
+			<div class="underline">
 			`	<label class="required">Name: </label>
 				<input type="text" placeholder="Your Name" class="form-control" ng-model="fbCtrl.name" required>
 			</div>
 			<br />
-			<div>
+			<div class="underline">
 				<label class="required">Email: </label>
 				<input type="email" placeholder="yourEmail@email.com" class="form-control" ng-model="fbCtrl.email" ng-pattern="ctrl.emailExp" required>
 			</div>
@@ -38,9 +37,10 @@
 				<textarea class="form-control" rows="5" ng-model="fbCtrl.improvementFeedback" ng-required="fbCtrl.feedbackRequired" ng-change="fbCtrl.setFeedbackRequired()" placeholder="What could be better?"></textarea>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary" ng-disabled="fbCtrl.feedbackForm.$invalid" ng-model="fbCtrl.improvementFeedback" ng-audio="app/contact/sounds/submitForm.mp3" volume="0.5" start="0.2">Submit</button>
+				<button type="submit" class="btn btn-tommy" ng-disabled="fbCtrl.feedbackForm.$invalid" ng-model="fbCtrl.improvementFeedback" ng-audio="app/common/sounds/submitForm.mp3" volume="0.2">Submit</button>
 			</div>
 		</form>
+		<br />
 	</div>
 </div>
 <div ng-show="fbCtrl.formSubmitted">

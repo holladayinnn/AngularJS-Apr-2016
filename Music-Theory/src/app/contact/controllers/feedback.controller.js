@@ -4,7 +4,7 @@ angular.module('MyApp.Contact')
 	var self = this;
 	
 	self.rating = 0;
-	self.ratingClass = ratingClasses[self.rating];
+	self.ratingClass = "";
 	self.iconClass = "";
 	self.feedbackRequired = true;
 	self.formSubmitted = false;

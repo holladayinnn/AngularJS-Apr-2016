@@ -1,1 +1,1 @@
-angular.module('MyApp.Freeplay', ['MyApp.Common']);
+angular.module('MyApp.Freeplay', ['MyApp.Common', 'ngAudio']);

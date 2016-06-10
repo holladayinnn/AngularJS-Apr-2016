@@ -44,32 +44,32 @@
     //Lessons child-states
     .state(STATES.kNoteState, {
       url:'/notes',
-      templateUrl: 'app/lessons/partials/notes.html',
+      templateUrl: 'app/lessons/partials/chapter1/notes.html',
       controller: 'NotesController as notesCtrl'
     })
     .state(STATES.kStepState, {
       url:'/steps',
-      templateUrl: 'app/lessons/partials/steps.html',
+      templateUrl: 'app/lessons/partials/chapter1/steps.html',
       controller: 'StepsController as stepsCtrl'
     })
     .state(STATES.kIntervalState, {
       url:'/intervals',
-      templateUrl: 'app/lessons/partials/intervals.html',
-      controller: 'IntervalsController as intervalCtrl'
+      templateUrl: 'app/lessons/partials/chapter1/intervals.html',
+      controller: 'IntervalsController as intervalsCtrl'
     })
     .state(STATES.kScaleState, {
       url:'/scales',
-      templateUrl: 'app/lessons/partials/scales.html',
+      templateUrl: 'app/lessons/partials/chapter1/scales.html',
       controller: 'ScalesController as scalesCtrl'
     })
     .state(STATES.kMajorScaleState, {
       url:'/majorscale',
-      templateUrl: 'app/lessons/partials/majorscale.html',
+      templateUrl: 'app/lessons/partials/chapter1/majorscale.html',
       controller: 'MajorScaleController as majorCtrl'
     })
     .state(STATES.kDiatonicIntervalState, {
       url:'/diatonic-intervals',
-      templateUrl: 'app/lessons/partials/diatonicintervals.html',
+      templateUrl: 'app/lessons/partials/chapter1/diatonicintervals.html',
       controller: 'DiatonicIntervalsController as diatonicCtrl'
     })
     .state(STATES.kChromaticIntervalState, {
@@ -90,6 +90,7 @@
       controller: 'LeaderboardController as lCtrl'
     })
 
+    //Contact child states
     .state(STATES.kContactLessonState, {
       url:'/lessons',
       templateUrl: 'app/contact/partials/contact.lessons.html'

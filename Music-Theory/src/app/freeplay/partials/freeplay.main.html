@@ -1,7 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-lg-1 col-md-1"></div>
-		<div class="col-lg-8 col-md-8">
+		<div class="col-md-8 col-md-offset-1">
 			<div class="piano page-top">
 				<ol class="scale-1">
 					<li ng-mousedown="ctrl.k.playNote(0)" ng-mouseup="ctrl.k.stopNote()">C</li>
@@ -38,31 +37,26 @@
 		<div class="form-group wave">
 			<div class="col-lg-2 col-md-2">
 			    <h3>Wave</h3>
-			    <div class="c-inputs-stacked">
-			    	<label class="c-input c-radio">
-			        	<input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.k.type" ng-value="'triangle'">
-						<span class="c-indicator"></span>
-			        	Triangle
-			        </label>
-			        <br />
-			        <label class="c-input c-radio">
-			        	<input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.k.type" ng-value="'sine'">
-						<span class="c-indicator"></span>
-			        	Sine
-			        </label>
-			        <br />
-			        <label class="c-input c-radio">
-			        	<input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.k.type" ng-value="'square'">
-						<span class="c-indicator"></span>
-			        	Square
-			        </label>
-			        <br />
-			        <label class="c-input c-radio">
-						<input id="radioStacked2" name="genre" type="radio" ng-model="ctrl.k.type" ng-value="'sawtooth'">
-						<span class="c-indicator"></span>
-						Sawtooth
-					</label>
-				</div>
+				<label class="control control--radio">Triangle
+			    	<input type="radio" name="radio" ng-model="ctrl.k.type" ng-value="'triangle'">
+			     	<div class="control__indicator"></div>
+			    </label>
+			    <label class="control control--radio">Sine
+			    	<input type="radio" name="radio" ng-model="ctrl.k.type" ng-value="'sine'">
+			     	<div class="control__indicator"></div>
+			    </label>
+			    <label class="control control--radio">Square
+			    	<input type="radio" name="radio" ng-model="ctrl.k.type" ng-value="'square'">
+			     	<div class="control__indicator"></div>
+			    </label>
+			    <label class="control control--radio">Sawtooth
+			    	<input type="radio" name="radio" ng-model="ctrl.k.type" ng-value="'sawtooth'">
+			     	<div class="control__indicator"></div>
+			    </label>
+			    <br />
+			    <div>
+			    	<button class="btn btn-tommy" ng-click="ctrl.playBeat()"><span ng-bind="ctrl.buttonText"></span> Beat</button>
+			    </div>
 			</div>
 		</div>
 	</div>

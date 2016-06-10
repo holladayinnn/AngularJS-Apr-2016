@@ -1,1 +1,1 @@
-angular.module('MyApp.Lessons', []);
+angular.module('MyApp.Lessons', ['ngAudio']);

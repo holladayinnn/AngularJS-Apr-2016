@@ -10,9 +10,12 @@
 
 #interval-trainer-piano li:hover {
     // color: #5bc0de;
-    color: goldenrod;
+    // color: goldenrod;
+    color: $turquoise;
     font-family: raleway;
-    font-weight: 700;
+    font-weight: 800;
+    // font-size: 9px;
+    text-align: center;
 }
 
 .intervaltrainer-top h4, .intervaltrainer-questions h4, .intervaltrainer-lives h4 {
@@ -25,18 +28,22 @@
 	font-family: raleway;
 }
 
+.instructions p {
+	font-size: 14px;
+}
 
 .intervaltrainer-container {
 	text-align:center;
 }
 
 .intervaltrainer {
+	background-color: #efefef;
 	display: inline-block;
 	padding: 20px;
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 	margin-bottom: 10px;
-	border: 2px solid #5bc0de;
-	border-radius: 1%;
+	// border: 2px solid #5bc0de;
+	// border-radius: 1%;
 	//background-color: #eff;
 }
 
@@ -47,7 +54,7 @@
 .intervaltrainer-header h3{
 	display:inline-block;
 	margin-top: 0px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .intervaltrainer-details {
@@ -90,18 +97,11 @@
 	color: red;
 }
 
-.animate-show i, .animate-show h3{
-  float: left;
-}
 
 .animate-show h3 {
+	font-size: 18px;
 	margin-right: 10px;
 	margin-top: 0px;
-}
-
-.animate-show i {
-	margin-top: 2px;
-	margin-right: 10px;
 }
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {

@@ -11,7 +11,7 @@ angular.module('MyApp.Exercise')
         self.pianoKeys = pianoKeys;
         self.itlevels = itlevelDescription;
         self.level = self.sk.level;
-        self.startGame = false;
+        self.startGame = true;
         self.levelUp = false;
         self.startOver = false;
         self.beatGame = false;

@@ -1,8 +1,12 @@
 angular.module('MyApp.Exercise')
 
-.controller('ExerciseController', function(_UserAddResource, _UserUpdateResource, 
+.controller('ExerciseController', function($state, _UserAddResource, _UserUpdateResource, 
 	STATES) {
 	var self = this;
+	$state.go(STATES.kETIntervalState);
+
+// kETIntervalState: 'exercises.interval',
+
 
 	self.navStates = STATES;
 	self._userAdded = false;

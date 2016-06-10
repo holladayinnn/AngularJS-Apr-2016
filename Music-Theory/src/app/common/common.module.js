@@ -1,1 +1,1 @@
-angular.module('MyApp.Common', []);
+angular.module('MyApp.Common', ['ngAudio']);

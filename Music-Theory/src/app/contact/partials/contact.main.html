@@ -1,17 +1,28 @@
 <div class="container">
 	<div class="page-top">
 		<div class="row">
-			<div class="col-lg-1 col-md-1"></div>
-			<div class="col-lg-10 col-md-10">
+			<div class="col-md-10 col-md-offset-1">
 				<div class="text-center">
 					<h1>Contact</h1>
 				</div>
 				<br />
-				<div class="">
-					<ul class="nav nav-justified nav-tabs">
-						<li class="active"><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kFeedbackState}}">Feedback</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kContactLessonState}}">Lessons</a></li>
-						<li><a ui-sref-active="active" class="page-link" ui-sref="{{ctrl.navStates.kDonateState}}">Donate</a></li>
+				<div class="nav-center">
+					<ul class="nav nav-justified nav-pills">
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kFeedbackState}}">
+								Feedback
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kContactLessonState}}">
+								Lessons
+							</a>
+						</li>
+						<li ui-sref-active="active">
+							<a class="page-link" ui-sref="{{ctrl.navStates.kDonateState}}">
+								Donate
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

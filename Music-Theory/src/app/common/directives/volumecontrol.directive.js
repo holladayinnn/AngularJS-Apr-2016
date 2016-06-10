@@ -2,7 +2,7 @@ angular.module('MyApp.Common')
 
     .directive('volumecontrol', function() {
     	return {
-    		templateUrl: 'app/common/partials/volumecontrol.html',
+    		templateUrl: 'app/common/partials/templates/volumecontrol.html',
     		controller: 'VolumeController as vCtrl',
             scope: true
     	}

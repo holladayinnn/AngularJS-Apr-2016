@@ -1,10 +1,9 @@
-<br />
 <div class="row">
-	<div class="col-lg-1 col-md-1"></div>
-	<div class="intervaltrainer col-lg-10 col-md-10">
+	<div class="intervaltrainer col-md-10 col-md-offset-1">
 		<div ng-hide="itCtrl.startGame">
 			<div class="instructions">
 				<div class="instructions-header text-center">
+					<br />
 					<h3>
 						Interval Ear Training Game Instructions
 					</h3>
@@ -26,14 +25,14 @@
 				<p>
 					If you get one of the top ten scores and save a username on the top of the page you will be added to the leaderboard page!
 				</p>
-				<button class="btn btn-sm btn-info btn-block" type="button" ng-click="itCtrl.startGame = true">Play Game!</button>
+				<button class="btn btn-sm btn-tommy btn-block" type="button" ng-click="itCtrl.startGame = true">Play Game!</button>
 			</div>
 		</div>
 
 
 		<div ng-show="itCtrl.startGame" class="row">
 			<div class="levels col-md-4">
-			<button class="btn btn-secondary btn-block instructions-button" type="button" ng-click="itCtrl.startGame = false"><i class="fa fa-info" aria-hidden="true"></i> Review Instructions</button>
+			<button class="btn btn-tommy btn-block instructions-button" type="button" ng-click="itCtrl.startGame = false"><i class="fa fa-info-circle" aria-hidden="true"></i> Instructions</button>
 				<ul class="list-group">
 					<button class="list-group-item" type="button" ng-repeat="level in itCtrl.itlevels" ng-click="itCtrl.resetLevel(level.num)">Level <span ng-bind="level.num"></span></button>
 				</ul>
@@ -42,25 +41,25 @@
 			<div class="col-md-8">
 				<div class="intervaltrainer-details">
 					<div class="animated-text">
-						<div class="animate-show level-up" ng-show="itCtrl.levelUp">
-							<h4>Level Up!</h4><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i>
+						<div class="animate-show text-center level-up" ng-show="itCtrl.levelUp">
+							<h3>Level Up!!!</h3>
 						</div>
-						<div class="animate-show start-over" ng-show="itCtrl.startOver">
-							<h4>You lost your 
-							<span ng-bind="itCtrl.sk.numToFail"></span> lives! Score back to 0!</h4> <i class="fa fa-frown-o fa-lg" aria-hidden="true"></i>
+						<div class="animate-show text-center start-over" ng-show="itCtrl.startOver">
+							<h3>You lost your 
+							<span ng-bind="itCtrl.sk.numToFail"></span> lives! Score back to 0!</h3>
 						</div>
 						<div class="animate-show beat-game" ng-show="itCtrl.beatGame">
 							<i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
-							<h4>Congrats you beat the last level! Your total score was: <span ng-bind="itCtrl.sk.score"></span>
-							</h4>
+							<p>Congrats you beat the last level! Your total score was: <span ng-bind="itCtrl.sk.score"></span>
+							</p>
 						</div>
 					</div>
 
-					<div class="intervaltrainer-header">
+					<!-- <div class="intervaltrainer-header">
 						<h3>Level <span ng-bind="itCtrl.level"></span>: <span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
-					</div>
+					</div> -->
 					<div class="intervaltrainer-button">
-						<button ng-click="itCtrl.it.play(itCtrl.sk.level)" type="button" class="btn btn-sm btn-info btn-block">Play Interval</button>
+						<button ng-click="itCtrl.it.play(itCtrl.sk.level)" type="button" class="btn btn-sm btn-tommy btn-block">Play Interval</button>
 					</div>
 
 					<div class="intervaltrainer-top">
@@ -81,6 +80,9 @@
 							ng-mousedown="itCtrl.k.playNote(itCtrl.it.frq1 + $index)" ng-mouseup="itCtrl.k.stopNote()" ng-click="itCtrl.checkAnswer($index, itCtrl.it); ctrl.update_user(itCtrl.sk.score)"></li>
 					</ol> 
 				</div>
+				<div class="intervaltrainer-header">
+						<h3>Level <span ng-bind="itCtrl.level"></span>: <span ng-bind="itCtrl.itlevels[itCtrl.level].description"></span></h3>
+					</div>
 				<div class="intervaltrainer-questions">
 					<h4>
 						Level up in: <strong><span ng-bind="itCtrl.sk.numToPass -(itCtrl.sk.numAttempted%itCtrl.sk.numToPass)"></span></strong>

@@ -1,9 +1,10 @@
 angular.module('MyApp.Lessons')
 
-.controller('LessonsController', function(STATES, PlayExample, Keyboard, PlayTime, $timeout) {
+.controller('LessonsController', function($state, STATES, PlayExample, Keyboard, PlayTime, $timeout) {
 	var self = this;
 
 	self.navStates = STATES;
+	$state.go(STATES.kNoteState);
 	self.k = new Keyboard();
 
 	self.disableButtons = false;

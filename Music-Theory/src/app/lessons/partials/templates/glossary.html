@@ -1,0 +1,24 @@
+<div class="glossary">
+	<div class="text-right">
+		<div id="wrap" class="text-right">
+			<form class="search">
+		  		<input id="search" autocomplete="off" ng-model="gCtrl.userSearch" name="search" type="text" placeholder="Lookup a Term">
+		  		<!-- <input class="btn" id="search_submit" value="Glossary" type="submit"> -->
+		  		<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+		  	</form>
+		</div>
+	</div>
+	<div ng-if="gCtrl.userSearch" class="search-results">
+			<ul>
+				<li ng-repeat="term in gCtrl.glossary | filter :gCtrl.userSearch | limitTo: 5">
+					<div class="search-item">
+						<p class="term">
+							<strong><span ng-bind="term.term"></span>: </strong>
+							<span ng-bind="term.def"></span>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
