@@ -1,6 +1,8 @@
-angular.module('MyApp.Lessons')
+(function(){
+	angular.module('MyApp.Lessons')
 
-.controller('ChromaticIntervalsController', function() {
-	var self = this;
-	
-});
+	.controller('ChromaticIntervalsController', function() {
+		var self = this;
+		
+	});
+})();

@@ -1,6 +1,8 @@
 $turquoise: #0bb;
 
-
+hr {
+  border-top: 1px solid #ddd;
+}
 
 acme-navbar {
     position: fixed;
@@ -66,7 +68,8 @@ acme-navbar {
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   // background-color:#2b90d9;
-  background-color: #078;
+  // background-color: #078;
+  background-color: $turquoise;
 }
 
 p, h1, h2, h3, h4, h5, h6 {

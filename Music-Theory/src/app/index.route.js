@@ -89,6 +89,11 @@
       templateUrl: 'app/exercises/partials/leaderboard.html',
       controller: 'LeaderboardController as lCtrl'
     })
+    .state(STATES.kSongTrainerState, {
+      url: '/songtrainer',
+      templateUrl: 'app/exercises/partials/songtrainer.html',
+      controller: 'SongTrainerController as stCtrl'
+    })
 
     //Contact child states
     .state(STATES.kContactLessonState, {

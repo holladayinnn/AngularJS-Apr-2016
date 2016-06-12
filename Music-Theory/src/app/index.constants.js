@@ -24,6 +24,7 @@
         //Exercise Child States
         kETIntervalState: 'exercises.interval',
         kLeaderboardState: 'exercises.leader',
+        kSongTrainerState: 'exercises.song',
 
         //Contact Child States
         kContactLessonState: 'contact.lessons',
