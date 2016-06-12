@@ -4,7 +4,7 @@
 			<span ng-bind="key.note"></span>
 		</li>
 	</ol>
-	<ol class="scale-2">
+	<ol class="">
 		<ol class="scale-1">
 		<li ng-repeat="key in kCtrl.pianoKeys|limitTo: 12" ng-mousedown="kCtrl.k.playNote($index+12)" ng-mouseup="kCtrl.k.stopNote()" ng-class="key.class">
 			<span ng-bind="key.note"></span>
